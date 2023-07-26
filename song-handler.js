@@ -1,16 +1,29 @@
 const fs = require('fs')
+const { off } = require('process')
 const ROM = fs.readFileSync(__dirname + '/ff3.smc')
 
-function toNormalOffset(offset) {
-    switch (offset.slice(0, 1)) {
-        case "C":
-            return offset.replace("C", "0")
-        case "D":
-            return offset.replace("D", "1")
-        case "E":
-            return offset.replace("E", "2")
-        default:
-            return offset
+function toHex(offset, mode = 'default') {
+    offset = offset.toString(16).toUpperCase()
+
+    if (offset.length % 2 !== 0) {
+        offset = `0${offset}`
+    }
+
+    if (mode === 'default') {
+        return offset
+    }
+
+    if (mode === 'snesOffset') {
+        switch (offset.slice(0, 1)) {
+            case "C":
+                return offset.replace("C", "0")
+            case "D":
+                return offset.replace("D", "1")
+            case "E":
+                return offset.replace("E", "2")
+            default:
+                return offset
+        }
     }
 }
 
@@ -41,9 +54,7 @@ class SongHandler {
                 newArray = newArray.map((offset) => {
                     return offset = (offset[0] | (offset[1] << 8) | (offset[2] << 16))
                 })
-                newArray = newArray.map((offset) => {
-                    return toNormalOffset(offset.toString(16).toUpperCase())
-                })
+                newArray = newArray.map((num) => { return toHex(num, 'snesOffset') })
                 return newArray
             }
         })()
@@ -84,9 +95,9 @@ class SongHandler {
         let newArray = []
         for (let i = 0; i < this.songsInTotal; i++) {
             newArray.push({
-                index: i,
+                index: `$${toHex(i)}`,
                 location: this.songPointers[i],
-                instrumentsLocation: this.pointer.instrumentSets + (i * 0x20),
+                instrumentsLocation: toHex(this.pointer.instrumentSets, 'snesOffset'),
                 instrumentSet: this.instrumentSet[i]
             })
         }
