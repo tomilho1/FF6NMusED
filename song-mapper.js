@@ -29,13 +29,37 @@ class MusicMap {
     constructor(
         romPath = __dirname + '/ff3.smc',
         ptr_songsInTotal = 0x053C5E,
-        ptr_songOffsets = 0x053E96,
+        ptr_songPointers = 0x053E96,
         ptr_snstrumentSets = 0x053F95,
         ptr_songScores = 0x085C7A) {
 
-        MusicMap.ROM = fs.readFileSync(romPath)
-    }
+        this.ROM = fs.readFileSync(romPath)
 
+        this.songsInTotal = {
+            address: ptr_songsInTotal,
+            data: ROM[ptr_songsInTotal]
+        }
+
+        this.songPointers = {
+            address: ptr_songPointers,
+            data: (() => {
+                let songPointers = ROM.subarray(ptr_songPointers, ptr_songPointers + (this.songsInTotal.data * 0x03))
+                {
+                    let newArray = []
+                    for (let i = 0; i < this.songsInTotal.data * 3; i = i + 0x03) {
+                        newArray.push(songPointers.subarray(i, i + 0x03))
+                    }
+                    newArray = newArray.map((offset) => {
+                        return offset = (offset[0] | (offset[1] << 8) | (offset[2] << 16))
+                    })
+                    newArray = newArray.map((offset) => {
+                        return toNormalOffset(offset.toString(16).toUpperCase())
+                    })
+                    return newArray
+                }
+                })()
+        }
+    }
 }
 
-console.log(new MusicMap())
+console.log(new MusicMap().songPointers)
