@@ -1,5 +1,4 @@
 const fs = require('fs')
-const { off } = require('process')
 const ROM = fs.readFileSync(__dirname + '/ff3.smc')
 
 function toHex(offset, mode = 'default') {
