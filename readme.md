@@ -9,7 +9,7 @@ Pretty self-explanatory. A vanilla ROM has this value set to $55 (85 songs). Thi
 This table contains the pointers to where each song is stored. Pointers are always stored in little endian addressing. The order of the pointers determines the song's index.
 
 * `C53F95`: **Instruments for each song (32 bytes for each song in the game)** -
-First 32 bytes holds the instruments for song $00, the next 32 bytes holds the instruments for the second songand so on. More information at: https://www.ff6hacking.com/wiki/doku.php?id=ff3:ff3us:doc:asm:fmt:instrument_sets
+First 32 bytes holds the instruments for song $00. Next 32 bytes holds the instruments for the song $01, and so on. More information at: https://www.ff6hacking.com/wiki/doku.php?id=ff3:ff3us:doc:asm:fmt:instrument_sets
 
 * `C85C7A`: **Song scores (variable size for each song)** -
 In a vanilla ROM, all the songs are contained here. You can, however, insert songs anywhere in the ROM, as long as its pointer at `C53E96` is pointing to the correct address. Song data format at: https://www.ff6hacking.com/wiki/doku.php?id=ff3:ff3us:doc:asm:codes:music_codes
