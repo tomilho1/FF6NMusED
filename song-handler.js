@@ -3,28 +3,21 @@ const { off } = require('process')
 const ROM = fs.readFileSync(__dirname + '/ff3.smc')
 
 function toHex(offset, mode = 'default') {
+    if (mode === 'HIROMtoNormal') {
+        offset = offset - 0xC00000
+    }
+
+    if (mode === 'NormalToHIROM') {
+        offset = offset + 0xC00000
+    }
+
     offset = offset.toString(16).toUpperCase()
 
     if (offset.length % 2 !== 0) {
         offset = `0${offset}`
     }
 
-    if (mode === 'default') {
-        return offset
-    }
-
-    if (mode === 'snesOffset') {
-        switch (offset.slice(0, 1)) {
-            case "C":
-                return offset.replace("C", "0")
-            case "D":
-                return offset.replace("D", "1")
-            case "E":
-                return offset.replace("E", "2")
-            default:
-                return offset
-        }
-    }
+    return offset
 }
 
 instrumentMap = new Map(Object.entries(require('./intrumentMap.json')))
@@ -54,7 +47,7 @@ class SongHandler {
                 newArray = newArray.map((offset) => {
                     return offset = (offset[0] | (offset[1] << 8) | (offset[2] << 16))
                 })
-                newArray = newArray.map((num) => { return toHex(num, 'snesOffset') })
+                newArray = newArray.map((num) => { return toHex(num, 'HIROMtoNormal') })
                 return newArray
             }
         })()
@@ -97,7 +90,7 @@ class SongHandler {
             newArray.push({
                 index: `$${toHex(i)}`,
                 location: this.songPointers[i],
-                instrumentsLocation: toHex(this.pointer.instrumentSets, 'snesOffset'),
+                instrumentsLocation: toHex(this.pointer.instrumentSets),
                 instrumentSet: this.instrumentSet[i]
             })
         }
