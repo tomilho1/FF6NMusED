@@ -1,22 +1,19 @@
 const fs = require('fs')
-const ROM = fs.readFileSync(__dirname + '/ff3.smc')
 
-function toHex(offset, options = {}) {
+function toHex(number, options = {}) {
     if (options.HIROMtoNormal) {
-        offset = offset - 0xC00000
+        number = number - 0xC00000
     }
 
     if (options.NormalToHIROM) {
-        offset = offset + 0xC00000
+        number = number + 0xC00000
     }
 
-    offset = offset.toString(16).toUpperCase()
-
-    if (offset.length % 2 !== 0) {
-        offset = `0${offset}`
+    number = number.toString(16).toUpperCase()
+    if (number.length % 2 !== 0) {
+        number = `0${number}`
     }
-
-    return offset
+    return number
 }
 
 function readLE(buffer) {
@@ -40,10 +37,10 @@ class SongHandler {
     ) {
         this.ROM = fs.readFileSync(romPath)
 
-        this.songsInTotal = ROM[ptr_songsInTotal]
+        this.songsInTotal = this.ROM[ptr_songsInTotal]
 
         this.songPointers = (() => {
-            let songPointers = ROM.subarray(
+            let songPointers = this.ROM.subarray(
                 ptr_songPointers,
                 ptr_songPointers + (this.songsInTotal * 0x03))
             {
@@ -52,13 +49,9 @@ class SongHandler {
                     newArray.push(songPointers.subarray(i, i + 0x03))
                 }
 
-                console.log(newArray[0])
-
                 newArray = newArray.map((offset) => {
                     return readLE(offset)
                 })
-
-                console.log(newArray[0])
 
                 newArray = newArray.map((num) => { return toHex(num, {HIROMtoNormal: true})})
                 return newArray
@@ -66,7 +59,7 @@ class SongHandler {
         })()
 
         this.instrumentSet = (() => {
-            let instrumentsData = ROM.subarray(
+            let instrumentsData = this.ROM.subarray(
                 ptr_instrumentSets,
                 ptr_instrumentSets + (this.songsInTotal * 0x20))
 
@@ -74,7 +67,7 @@ class SongHandler {
 
             for (let i = 0; i < this.songsInTotal; i++) {
                 let currentSong = instrumentsData.subarray(i * 0x20, i * 0x20 + 0x20)
-                let a = []
+                let currentSet = []
                 for (let i = 0; i < 0x20; i = i + 2) {
                     if (currentSong[i] !== 0x00) {
                         let index = currentSong[i].toString(16).toUpperCase()
@@ -82,10 +75,10 @@ class SongHandler {
                         if (index.length < 2) {
                             index = `0${index}`
                         }
-                        a.push(instrumentMap.get(index))
+                        currentSet.push(instrumentMap.get(index))
                     }
                 }
-                instrumentSets.push(a)
+                instrumentSets.push(currentSet)
             }
             return instrumentSets
         })()
@@ -97,12 +90,13 @@ class SongHandler {
         }
     }
 
-    getMap() {
+    getSongMap() {
         let newArray = []
         for (let i = 0; i < this.songsInTotal; i++) {
             newArray.push({
-                index: `$${toHex(i)}`,
+                index: toHex(i),
                 location: this.songPointers[i],
+                length: toHex(readLE(this.ROM.subarray(parseInt(this.songPointers[i], 16), parseInt(this.songPointers[i], 16) + 2))),
                 instrumentsLocation: toHex(this.pointer.instrumentSets),
                 instrumentSet: this.instrumentSet[i]
             })
@@ -111,4 +105,4 @@ class SongHandler {
     }
 }
 
-console.log(new SongHandler().getMap())
+console.log(new SongHandler().getSongMap())
