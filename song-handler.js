@@ -53,7 +53,7 @@ class SongHandler {
                     return readLE(offset)
                 })
 
-                newArray = newArray.map((num) => { return toHex(num, {HIROMtoNormal: true})})
+                newArray = newArray.map((num) => { return toHex(num, { HIROMtoNormal: true }) })
                 return newArray
             }
         })()
@@ -75,7 +75,7 @@ class SongHandler {
                         if (index.length < 2) {
                             index = `0${index}`
                         }
-                        currentSet.push(instrumentMap.get(index))
+                        currentSet.push(instrumentMap.get(index) + ` (${index})`)
                     }
                 }
                 instrumentSets.push(currentSet)
@@ -97,17 +97,53 @@ class SongHandler {
                 index: toHex(i),
                 location: this.songPointers[i],
                 length: toHex(readLE(this.ROM.subarray(parseInt(this.songPointers[i], 16), parseInt(this.songPointers[i], 16) + 2))),
-                instrumentsLocation: toHex(this.pointer.instrumentSets),
+                instrumentsLocation: toHex(this.pointer.instrumentSets + 0x20 * i),
                 instrumentSet: this.instrumentSet[i]
             })
         }
         return newArray
     }
 
-    ripTrackData(songIndex) {
-        let songLocation = this.songPointers[songIndex]
-        let songLength = toHex(readLE(this.ROM.subarray(parseInt(this.songPointers[songIndex], 16), parseInt(this.songPointers[songIndex], 16) + 2)))
+    /**
+     * Returns a song's track (Buffer).
+     */
+    getTrack(songId) {
+        let songLocation = this.songPointers[songId]
+        let songLength = toHex(readLE(this.ROM.subarray(parseInt(this.songPointers[songId], 16), parseInt(this.songPointers[songId], 16) + 2)))
 
         return this.ROM.subarray(parseInt(songLocation, 16), parseInt(songLocation, 16) + parseInt(songLength, 16) + 2)
     }
+
+    /**
+     * Replaces **one** instrument from a track.
+     * * songId must receive a number.
+     * * Instrument paramethers can be either id **or** name of the desired instrument.
+     */
+    replaceInstrument(songId, oldInstrument, newInstrument) {
+        let newSet = this.ROM.subarray(
+            this.pointer.instrumentSets + (0x20 * songId),
+            this.pointer.instrumentSets + (0x20 * songId) + 0x20
+        )
+
+        for (let i = 0, i2 = 0; i < 0x20; i = i + 2) {
+            if (newSet[i] === 0x00) {
+                continue
+            }
+            i2++
+            if (newSet[i] === oldInstrument) {
+                newSet[i] = newInstrument
+
+                this.instrumentSet[songId][i2] = instrumentMap.get(toHex(newInstrument)) + ` (${toHex(newInstrument)})`
+                console.log(instrumentMap.get(toHex(oldInstrument)), 'was replaced by',instrumentMap.get(toHex(newInstrument)))
+
+                break
+            }
+        }
+        return newSet
+    }
 }
+
+let a = new SongHandler()
+console.log(a.replaceInstrument(1, 0x1b, 0x01))
+
+console.log(a.instrumentSet[1])
