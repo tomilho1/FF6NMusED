@@ -90,7 +90,7 @@ class SongHandler {
         }
     }
 
-    getSongMap() {
+    getSongLibrary() {
         let newArray = []
         for (let i = 0; i < this.songsInTotal; i++) {
             newArray.push({
@@ -103,6 +103,11 @@ class SongHandler {
         }
         return newArray
     }
-}
 
-console.log(new SongHandler().getSongMap())
+    ripTrackData(songIndex) {
+        let songLocation = this.songPointers[songIndex]
+        let songLength = toHex(readLE(this.ROM.subarray(parseInt(this.songPointers[songIndex], 16), parseInt(this.songPointers[songIndex], 16) + 2)))
+
+        return this.ROM.subarray(parseInt(songLocation, 16), parseInt(songLocation, 16) + parseInt(songLength, 16) + 2)
+    }
+}
