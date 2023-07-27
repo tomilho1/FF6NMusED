@@ -3,7 +3,7 @@
 Music related data includes the following tables in the ROM:**
 
 * `C53C5E`: **Number of songs in the game (1 byte of data)** -
-Pretty self-explanatory. A vanilla ROM has this value set to $55 (85 songs). This value shall be incremented by 1 everytime a song is added.
+Self-explanatory. A vanilla ROM has this value set to $55 (85 songs). This value shall be incremented by 1 everytime a song is added.
 
 * `C53E96`: **Pointers for song scores (3 bytes for each song in the game)** -
 This table contains the pointers to where each song is stored. Pointers are always stored in little endian addressing. The order of the pointers determines the song's index.
@@ -16,7 +16,7 @@ In a vanilla ROM, all the songs are contained here. You can, however, insert son
 
 ### Expected features:
 - Generate a ROM Map regarding music data (getMap())
-- Replacing song intruments
-- Swapping songs scores or pointers around
-- Adding your own songs
-- Adding your own instruments
+- Replace song intruments
+- Swap song scores or pointers around
+- Add your own songs
+- Add your own instruments
