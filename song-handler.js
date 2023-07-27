@@ -1,12 +1,12 @@
 const fs = require('fs')
 const ROM = fs.readFileSync(__dirname + '/ff3.smc')
 
-function toHex(offset, mode = 'default') {
-    if (mode === 'HIROMtoNormal') {
+function toHex(offset, options = {}) {
+    if (options.HIROMtoNormal) {
         offset = offset - 0xC00000
     }
 
-    if (mode === 'NormalToHIROM') {
+    if (options.NormalToHIROM) {
         offset = offset + 0xC00000
     }
 
@@ -17,6 +17,14 @@ function toHex(offset, mode = 'default') {
     }
 
     return offset
+}
+
+function readLE(buffer) {
+    let sum = 0;
+    for (let i = buffer.byteLength - 1; i >= 0; i--) {
+        sum = (sum << 8) + buffer[i]
+    }
+    return sum
 }
 
 instrumentMap = new Map(Object.entries(require('./intrumentMap.json')))
@@ -43,10 +51,16 @@ class SongHandler {
                 for (let i = 0; i < this.songsInTotal * 3; i = i + 0x03) {
                     newArray.push(songPointers.subarray(i, i + 0x03))
                 }
+
+                console.log(newArray[0])
+
                 newArray = newArray.map((offset) => {
-                    return offset = (offset[0] | (offset[1] << 8) | (offset[2] << 16))
+                    return readLE(offset)
                 })
-                newArray = newArray.map((num) => { return toHex(num, 'HIROMtoNormal') })
+
+                console.log(newArray[0])
+
+                newArray = newArray.map((num) => { return toHex(num, {HIROMtoNormal: true})})
                 return newArray
             }
         })()
