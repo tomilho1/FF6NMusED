@@ -17,8 +17,8 @@ In a vanilla ROM, all the songs are contained here. You can, however, insert son
 ### Usage:
 ```
 const FF3SongHandler = new SongHandler('path/to/rom.smc');
-a.replaceInstrument(0x02, 'church organ', 'choir);
-a.compile('path/to/modifiedRom.smc);
+FF3SongHandler.replaceInstrument(0x02, 'church organ', 'choir);
+FF3SongHandler.compile('path/to/modifiedRom.smc);
 ```
 
 ### Features:
