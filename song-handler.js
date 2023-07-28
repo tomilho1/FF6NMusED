@@ -57,7 +57,7 @@ class SongHandler {
             }
         })()
 
-        this.instrumentSet = (() => {
+        this.instrumentSets = (() => {
             let instrumentsData = this.ROM.subarray(
                 ptr_instrumentSets,
                 ptr_instrumentSets + (this.songsInTotal * 0x20))
@@ -82,7 +82,7 @@ class SongHandler {
             return instrumentSets
         })()
 
-        this.pointer = {
+        this.pointers = {
             songsInTotal: ptr_songsInTotal,
             songPointers: ptr_songPointers,
             instrumentSets: ptr_instrumentSets
@@ -92,14 +92,14 @@ class SongHandler {
     /**
      * @param {*} songId If left blank, returns all songs in the ROM. 
      */
-    getSongLibrary(songId = undefined) {
+    getSongData(songId = undefined) {
         if (typeof songId === 'number') {
             return {
                 index: toHex(songId),
                 location: this.songPointers[songId],
                 length: toHex(readLE(this.ROM.subarray(parseInt(this.songPointers[songId], 16), parseInt(this.songPointers[songId], 16) + 2))),
-                instrumentsLocation: toHex(this.pointer.instrumentSets + 0x20 * songId),
-                instrumentSet: this.instrumentSet[songId]
+                instrumentsLocation: toHex(this.pointers.instrumentSets + 0x20 * songId),
+                instrumentSet: this.instrumentSets[songId]
             }
         }
 
@@ -109,8 +109,8 @@ class SongHandler {
                 index: toHex(i),
                 location: this.songPointers[i],
                 length: toHex(readLE(this.ROM.subarray(parseInt(this.songPointers[i], 16), parseInt(this.songPointers[i], 16) + 2))),
-                instrumentsLocation: toHex(this.pointer.instrumentSets + 0x20 * i),
-                instrumentSet: this.instrumentSet[i]
+                instrumentsLocation: toHex(this.pointers.instrumentSets + 0x20 * i),
+                instrumentSet: this.instrumentSets[i]
             })
         }
         return newArray
@@ -159,8 +159,8 @@ class SongHandler {
         }
 
         let newSet = this.ROM.subarray(
-            this.pointer.instrumentSets + (0x20 * songId),
-            this.pointer.instrumentSets + (0x20 * songId) + 0x20
+            this.pointers.instrumentSets + (0x20 * songId),
+            this.pointers.instrumentSets + (0x20 * songId) + 0x20
         )
 
         for (let i = 0, i2 = 0; i < 0x20; i = i + 2) {
@@ -170,7 +170,7 @@ class SongHandler {
             if (newSet[i] === oldInstrument) {
                 newSet[i] = newInstrument
 
-                this.instrumentSet[songId][i2] = instrumentMap.get(toHex(newInstrument)) + ` (${toHex(newInstrument)})`
+                this.instrumentSets[songId][i2] = instrumentMap.get(toHex(newInstrument)) + ` (${toHex(newInstrument)})`
                 console.log(instrumentMap.get(toHex(oldInstrument)), 'was replaced by', instrumentMap.get(toHex(newInstrument)))
 
                 return newSet
@@ -191,4 +191,4 @@ console.log(a.replaceInstrument(2, 'piano', 'glockenspiel'))
 
 a.compile(__dirname + '/ffcity.smc')
 
-console.log(a.getSongLibrary(2))
+console.log(a.getSongData(2))
