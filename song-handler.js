@@ -1,4 +1,5 @@
 const fs = require('fs')
+instrumentMap = new Map(Object.entries(require('./instrumentMap.json')))
 
 function toHex(number, options = {}) {
     if (options.HIROMtoNormal) {
@@ -23,8 +24,6 @@ function readLE(buffer) {
     }
     return sum
 }
-
-instrumentMap = new Map(Object.entries(require('./intrumentMap.json')))
 
 class SongHandler {
     static ROM
@@ -90,7 +89,20 @@ class SongHandler {
         }
     }
 
-    getSongLibrary() {
+    /**
+     * @param {*} songId If left blank, returns all songs in the ROM. 
+     */
+    getSongLibrary(songId = undefined) {
+        if (typeof songId === 'number') {
+            return {
+                index: toHex(songId),
+                location: this.songPointers[songId],
+                length: toHex(readLE(this.ROM.subarray(parseInt(this.songPointers[songId], 16), parseInt(this.songPointers[songId], 16) + 2))),
+                instrumentsLocation: toHex(this.pointer.instrumentSets + 0x20 * songId),
+                instrumentSet: this.instrumentSet[songId]
+            }
+        }
+
         let newArray = []
         for (let i = 0; i < this.songsInTotal; i++) {
             newArray.push({
@@ -120,6 +132,32 @@ class SongHandler {
      * * Instrument paramethers can be either id **or** name of the desired instrument.
      */
     replaceInstrument(songId, oldInstrument, newInstrument) {
+        let oldInstrumentName
+        let newInstrumentName
+
+        // Converts an instrument's name to it's index
+        if (typeof oldInstrument === 'string' || typeof newInstrument === 'string') {
+            let reverseMap = new Map()
+            Array.from(instrumentMap).forEach(pair => {
+                reverseMap.set(pair[1].toLowerCase(), pair[0])
+            })
+            oldInstrument = parseInt(reverseMap.get(oldInstrument.toLowerCase()), 16)
+            newInstrument = parseInt(reverseMap.get(newInstrument.toLowerCase()), 16)
+        }
+
+        oldInstrumentName = instrumentMap.get(toHex(oldInstrument))
+        newInstrumentName = instrumentMap.get(toHex(newInstrument))
+
+        if (oldInstrumentName === undefined || newInstrumentName === undefined) {
+            console.log("Instrument is not valid")
+            return
+        }
+
+        if(songId < 0 || songId > this.songsInTotal) {
+            console.log('Song index is not valid')
+            return
+        }
+
         let newSet = this.ROM.subarray(
             this.pointer.instrumentSets + (0x20 * songId),
             this.pointer.instrumentSets + (0x20 * songId) + 0x20
@@ -129,21 +167,28 @@ class SongHandler {
             if (newSet[i] === 0x00) {
                 continue
             }
-            i2++
             if (newSet[i] === oldInstrument) {
                 newSet[i] = newInstrument
 
                 this.instrumentSet[songId][i2] = instrumentMap.get(toHex(newInstrument)) + ` (${toHex(newInstrument)})`
-                console.log(instrumentMap.get(toHex(oldInstrument)), 'was replaced by',instrumentMap.get(toHex(newInstrument)))
+                console.log(instrumentMap.get(toHex(oldInstrument)), 'was replaced by', instrumentMap.get(toHex(newInstrument)))
 
-                break
+                return newSet
             }
+            i2++
         }
-        return newSet
+    }
+
+    compile(romPath) {
+        fs.writeFileSync(romPath, this.ROM)
     }
 }
 
 let a = new SongHandler()
-console.log(a.replaceInstrument(1, 0x1b, 0x01))
 
-console.log(a.instrumentSet[1])
+console.log(a.replaceInstrument(2, 'church organ', 'choir'))
+console.log(a.replaceInstrument(2, 'piano', 'glockenspiel'))
+
+a.compile(__dirname + '/ffcity.smc')
+
+console.log(a.getSongLibrary(2))
