@@ -2,31 +2,8 @@ const fs = require('fs')
 const instrumentMap = new Map(Object.entries(require('./instrumentMap.json')))
 const reverseMap = new Map(Object.entries(require('./reverseInstrumentMap.json')))
 
+const {toHex, readLE} = require('./hex-utils')
 const parseTrack = require('./parseTrack')
-
-function toHex(number, options = {}) {
-    if (options.HIROMtoNormal) {
-        number = number - 0xC00000
-    }
-
-    if (options.NormalToHIROM) {
-        number = number + 0xC00000
-    }
-
-    number = number.toString(16).toUpperCase()
-    if (number.length % 2 !== 0) {
-        number = `0${number}`
-    }
-    return number
-}
-
-function readLE(buffer) {
-    let sum = 0;
-    for (let i = buffer.byteLength - 1; i >= 0; i--) {
-        sum = (sum << 8) + buffer[i]
-    }
-    return sum
-}
 
 class MusicEditor {
     static ROM
@@ -185,8 +162,7 @@ class MusicEditor {
      * Generates a text file containing the script of a track in the ROM. 
      */
     parseTrack(songId, songName = "Unnamed", txtPath = `${__dirname}/${songName}.txt`) {
-        let songInfo = this.getSongInfo(songId)
-        let songLocation = parseInt(songInfo.location, 16)
+        let songLocation = readLE(this.songPointers.binary.subarray(songId * 0x03, songId * 0x03 + 0x03)) - 0xC00000
         let trackData = this.ripTrack(songId)
         let instrumentSet = this.instrumentSets.binary.subarray(songId * 0x20, songId * 0x20 + 0x20)
 
@@ -197,3 +173,7 @@ class MusicEditor {
         fs.writeFileSync(romPath, this.ROM)
     }
 }
+
+let a = new MusicEditor(__dirname + '/sasagra.smc');
+
+a.parseTrack(0x24, 'FFIII Battle Theme')
