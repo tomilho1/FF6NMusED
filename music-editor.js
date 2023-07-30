@@ -74,10 +74,17 @@ class MusicEditor {
         })()
     }
 
+    validateSongId (songId) {
+        if (songId < 0 || songId >= this.songsInTotal.content) {
+            throw new Error("Invalid song index.")
+        }
+    }
+
     /**
      * @param {*} songId If left blank, returns all songs in the ROM. 
      */
     getSongInfo(songId = undefined) {
+        this.validateSongId(songId)
         if (typeof songId === 'number') {
             return {
                 index: toHex(songId),
@@ -105,6 +112,8 @@ class MusicEditor {
      * Returns a song's track (Buffer).
      */
     ripTrack(songId) {
+        this.validateSongId(songId)
+
         let songLocation = readLE(this.songPointers.binary.subarray(songId * 0x03, songId * 0x03 + 0x03)) - 0xC00000
         // First two bytes of a track stores it's length:
         let songLength = readLE(this.ROM.subarray(songLocation, songLocation + 2))
@@ -118,6 +127,8 @@ class MusicEditor {
     * * Instrument paramethers can be either id **or** name of the desired instrument.
     */
     replaceInstrument(songId, oldInstrument, newInstrument) {
+        this.validateSongId(songId)
+
         let oldInstrumentName
         let newInstrumentName
 
@@ -132,11 +143,6 @@ class MusicEditor {
 
         if (oldInstrumentName === undefined || newInstrumentName === undefined) {
             console.log("Instrument is not valid")
-            return
-        }
-
-        if (songId < 0 || songId >= this.songsInTotal.content) {
-            console.log('Song index is not valid')
             return
         }
 
@@ -162,11 +168,14 @@ class MusicEditor {
      * Generates a text file containing the script of a track in the ROM. 
      */
     parseTrack(songId, songName = "Unnamed", txtPath = `${__dirname}/${songName}.txt`) {
+        this.validateSongId(songId)
+
         let songLocation = readLE(this.songPointers.binary.subarray(songId * 0x03, songId * 0x03 + 0x03)) - 0xC00000
         let trackData = this.ripTrack(songId)
         let instrumentSet = this.instrumentSets.binary.subarray(songId * 0x20, songId * 0x20 + 0x20)
 
         parseTrack(songLocation, songName, trackData, txtPath, instrumentSet, instrumentMap)
+        console.log(songName, "was successfully written.",)
     }
 
     compile(romPath) {
@@ -174,6 +183,5 @@ class MusicEditor {
     }
 }
 
-let a = new MusicEditor(__dirname + '/sasagra.smc');
-
-a.parseTrack(0x24, 'FFIII Battle Theme')
+let a = new MusicEditor(__dirname + '/ff3.smc');
+console.log(a.ripTrack(0x55))
