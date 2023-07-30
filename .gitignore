@@ -1,3 +1,5 @@
 *.smc
 *.rom
 *.bin
+*.bak
+*.txt
