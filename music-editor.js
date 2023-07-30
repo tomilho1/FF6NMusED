@@ -2,6 +2,8 @@ const fs = require('fs')
 const instrumentMap = new Map(Object.entries(require('./instrumentMap.json')))
 const reverseMap = new Map(Object.entries(require('./reverseInstrumentMap.json')))
 
+const parseTrack = require('./parseTrack')
+
 function toHex(number, options = {}) {
     if (options.HIROMtoNormal) {
         number = number - 0xC00000
@@ -179,16 +181,19 @@ class MusicEditor {
         }
     }
 
+    /**
+     * Generates a text file containing the script of a track in the ROM. 
+     */
+    parseTrack(songId, songName = "Unnamed", txtPath = `${__dirname}/${songName}.txt`) {
+        let songInfo = this.getSongInfo(songId)
+        let songLocation = parseInt(songInfo.location, 16)
+        let trackData = this.ripTrack(songId)
+        let instrumentSet = this.instrumentSets.binary.subarray(songId * 0x20, songId * 0x20 + 0x20)
+
+        parseTrack(songLocation, songName, trackData, txtPath, instrumentSet, instrumentMap)
+    }
+
     compile(romPath) {
         fs.writeFileSync(romPath, this.ROM)
     }
 }
-
-let a = new MusicEditor()
-
-console.log(a.replaceInstrument(2, 'church organ', 'choir'))
-console.log(a.replaceInstrument(2, 'piano', 'glockenspiel'))
-
-a.compile(__dirname + '/ffcity.smc')
-
-console.log(a.getSongInfo(2))
