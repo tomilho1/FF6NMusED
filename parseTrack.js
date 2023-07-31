@@ -57,7 +57,7 @@ function parseTrack (
     
     function C5() {
         gInc += 2
-        return (`Set volume to ${track[gInc]} over ${lenghtMap.get(track[gInc - 1])}`)
+        return (`Set volume to ${track[gInc]} over [${lenghtMap.get(track[gInc - 1])}]`)
     }
     
     function C6() {

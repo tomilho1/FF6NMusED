@@ -1,9 +1,9 @@
-function toHex(number, options = {}) {
-    if (options.HIROMtoNormal) {
+function toHex(number, mode = 'default') {
+    if (mode === 'HIROMtoNormal') {
         number = number - 0xC00000
     }
 
-    if (options.NormalToHIROM) {
+    if (mode === 'NormalToHIROM') {
         number = number + 0xC00000
     }
 

@@ -2,130 +2,126 @@ const fs = require('fs')
 const instrumentMap = new Map(Object.entries(require('./instrumentMap.json')))
 const reverseMap = new Map(Object.entries(require('./reverseInstrumentMap.json')))
 
-const {toHex, readLE} = require('./hex-utils')
+const { toHex, readLE } = require('./hex-utils')
 const parseTrack = require('./parseTrack')
 
 class MusicEditor {
     static ROM
 
+    get instance() {
+        return this
+    }
+
+    songsInTotal = {
+        address: 0,
+        instance: this.instance,
+        set binary(data) {
+            this._binary = data;
+            this.content = data[0];
+        },
+        get binary() {
+            return this._binary
+        }
+    }
+
+    trackPointers = {
+        address: 0,
+        instance: this.instance,
+        binary: 0,
+        updateContent() {
+            let pointers = []
+            for (let i = 0; i < this.instance.songsInTotal.content * 0x03; i = i + 0x03) {
+                pointers.push(this.binary.subarray(i, i + 0x03))
+            }
+            this.content = pointers.map((offset) => {
+                return readLE(offset)
+            });
+        }
+    }
+
+    instrumentSets = {
+        address: 0,
+        instance: this.instance,
+        binary: 0,
+        updateContent() {
+            let sets = []
+            for (let i = 0; i < this.instance.songsInTotal.content; i++) {
+                let currentSong = this.binary.subarray(i * 0x20, i * 0x20 + 0x20)
+                let currentSet = []
+                for (let i = 0; i < 0x20; i = i + 2) {
+                    if (currentSong[i] !== 0x00) {
+                        let instrumentId = toHex(currentSong[i])
+                        currentSet.push(instrumentMap.get(instrumentId) + ` ($${instrumentId})`)
+                    }
+                }
+                sets.push(currentSet)
+            }
+            this.content = sets
+        }
+    }
+
     constructor(
         romPath = __dirname + '/ff3.smc',
         ptr_songsInTotal = 0x053C5E,
-        ptr_songPointers = 0x053E96,
+        ptr_trackPointers = 0x053E96,
         ptr_instrumentSets = 0x053F95,
     ) {
         this.ROM = fs.readFileSync(romPath)
 
-        this.songsInTotal = {
-            address: ptr_songsInTotal,
-            content: this.ROM[ptr_songsInTotal],
-            binary: this.ROM.subarray(ptr_songsInTotal, ptr_songsInTotal + 1)
-        }
+        this.songsInTotal.address = ptr_songsInTotal
+        this.songsInTotal.binary = this.ROM.subarray(
+            ptr_songsInTotal,
+            ptr_songsInTotal + 1
+        )
 
-        this.songPointers = (() => {
-            let pointersData = this.ROM.subarray(
-                ptr_songPointers,
-                ptr_songPointers + (this.songsInTotal.content * 0x03))
-            {
-                let newArray = []
-                for (let i = 0; i < this.songsInTotal.content * 3; i = i + 0x03) {
-                    newArray.push(pointersData.subarray(i, i + 0x03))
-                }
-                newArray = newArray.map((offset) => {
-                    return readLE(offset)
-                })
+        this.trackPointers.address = ptr_trackPointers
+        this.trackPointers.binary = this.ROM.subarray(
+            ptr_trackPointers,
+            ptr_trackPointers + (this.songsInTotal.content * 0x03)
+        )
+        this.trackPointers.updateContent()
 
-                newArray = newArray.map((num) => { return toHex(num, { HIROMtoNormal: true }) })
-                return {
-                    address: ptr_songPointers,
-                    content: newArray,
-                    binary: pointersData
-                }
-            }
-        })()
-
-        this.instrumentSets = (() => {
-            let instrumentsData = this.ROM.subarray(
-                ptr_instrumentSets,
-                ptr_instrumentSets + (this.songsInTotal.content * 0x20))
-
-            let instrumentSets = []
-
-            for (let i = 0; i < this.songsInTotal.content; i++) {
-                let currentSong = instrumentsData.subarray(i * 0x20, i * 0x20 + 0x20)
-                let currentSet = []
-                for (let i = 0; i < 0x20; i = i + 2) {
-                    if (currentSong[i] !== 0x00) {
-                        let index = currentSong[i].toString(16).toUpperCase()
-
-                        if (index.length < 2) {
-                            index = `0${index}`
-                        }
-                        currentSet.push(instrumentMap.get(index) + ` (${index})`)
-                    }
-                }
-                instrumentSets.push(currentSet)
-            }
-            return {
-                address: ptr_instrumentSets,
-                content: instrumentSets,
-                binary: instrumentsData
-            }
-        })()
+        this.instrumentSets.address = ptr_instrumentSets
+        this.instrumentSets.binary = this.ROM.subarray(
+            ptr_instrumentSets,
+            ptr_instrumentSets + (this.songsInTotal.content * 0x20)
+        )
+        this.instrumentSets.updateContent()
     }
 
-    validateSongId (songId) {
-        if (songId < 0 || songId >= this.songsInTotal.content) {
+    validateSongId(songId) {
+        if (typeof songId !== 'number' || songId < 0 || songId >= this.songsInTotal.content) {
             throw new Error("Invalid song index.")
         }
     }
 
-    /**
-     * @param {*} songId If left blank, returns all songs in the ROM. 
-     */
-    getSongInfo(songId = undefined) {
+    getSongContents(songId) {
         this.validateSongId(songId)
-        if (typeof songId === 'number') {
-            return {
-                index: toHex(songId),
-                location: this.songPointers.content[songId],
-                length: toHex(readLE(this.ROM.subarray(parseInt(this.songPointers.content[songId], 16), parseInt(this.songPointers.content[songId], 16) + 2))),
-                instrumentsLocation: toHex(this.instrumentSets.address + 0x20 * songId),
-                instrumentSet: this.instrumentSets.content[songId]
-            }
+        return {
+            index: '$' + toHex(songId),
+            trackLocation: toHex(this.trackPointers.content[songId] - 0xC00000),
+            length: '$' + toHex(readLE(this.ROM.subarray(
+                this.trackPointers.content[songId],
+                this.trackPointers.content[songId] + 2))),
+            instrumentsLocation: toHex(this.instrumentSets.address + 0x20 * songId),
+            instrumentSet: this.instrumentSets.content[songId]
         }
-
-        let newArray = []
-        for (let i = 0; i < this.songsInTotal.content; i++) {
-            newArray.push({
-                index: toHex(i),
-                location: this.songPointers.content[i],
-                length: toHex(readLE(this.ROM.subarray(parseInt(this.songPointers.content[i], 16), parseInt(this.songPointers.content[i], 16) + 2))),
-                instrumentsLocation: toHex(this.instrumentSets.address + 0x20 * i),
-                instrumentSet: this.instrumentSets.content[i]
-            })
-        }
-        return newArray
     }
 
-    /**
-     * Returns a song's track (Buffer).
-     */
     ripTrack(songId) {
         this.validateSongId(songId)
-
-        let songLocation = readLE(this.songPointers.binary.subarray(songId * 0x03, songId * 0x03 + 0x03)) - 0xC00000
+        let trackLocation = this.trackPointers.content[songId] - 0xC00000
         // First two bytes of a track stores it's length:
-        let songLength = readLE(this.ROM.subarray(songLocation, songLocation + 2))
-        // + 2 at the end because those first 2 bytes does not count themselves:
-        return this.ROM.subarray(songLocation, songLocation + songLength + 2) 
+        let trackLength = readLE(this.ROM.subarray(trackLocation, trackLocation + 2))
+        // + 2 at the end because those first 2 bytes don't count themselves:
+        return this.ROM.subarray(trackLocation, trackLocation + trackLength + 2)
     }
 
-    /**
-    * Replaces **one** instrument from a track.
-    * * songId must receive a number.
-    * * Instrument paramethers can be either id **or** name of the desired instrument.
-    */
+    ripInstrumentSet(songId) {
+        this.validateSongId(songId)
+        return this.instrumentSets.binary.subarray(songId * 0x20, songId * 0x20 + 0x20)
+    }
+
     replaceInstrument(songId, oldInstrument, newInstrument) {
         this.validateSongId(songId)
 
@@ -142,39 +138,29 @@ class MusicEditor {
         newInstrumentName = instrumentMap.get(toHex(newInstrument))
 
         if (oldInstrumentName === undefined || newInstrumentName === undefined) {
-            console.log("Instrument is not valid")
-            return
+            throw new Error("Invalid instrument index.")
         }
 
         let newSet = this.instrumentSets.binary.subarray(songId * 0x20, songId * 0x20 + 0x20)
 
         for (let i = 0, i2 = 0; i < 0x20; i = i + 2) {
-            if (newSet[i] === 0x00) {
-                continue
-            }
             if (newSet[i] === oldInstrument) {
                 newSet[i] = newInstrument
-
-                this.instrumentSets.content[songId][i2] = instrumentMap.get(toHex(newInstrument)) + ` (${toHex(newInstrument)})`
+                this.instrumentSets.updateContent()
                 console.log(instrumentMap.get(toHex(oldInstrument)), 'was replaced by', instrumentMap.get(toHex(newInstrument)))
-
                 return newSet
             }
-            i2++
         }
     }
 
-    /**
-     * Generates a text file containing the script of a track in the ROM. 
-     */
     parseTrack(songId, songName = "Unnamed", txtPath = `${__dirname}/${songName}.txt`) {
         this.validateSongId(songId)
 
-        let songLocation = readLE(this.songPointers.binary.subarray(songId * 0x03, songId * 0x03 + 0x03)) - 0xC00000
+        let trackLocation = this.trackPointers.content[songId] - 0xC00000
         let trackData = this.ripTrack(songId)
-        let instrumentSet = this.instrumentSets.binary.subarray(songId * 0x20, songId * 0x20 + 0x20)
+        let instrumentSet = this.ripInstrumentSet(songId)
 
-        parseTrack(songLocation, songName, trackData, txtPath, instrumentSet, instrumentMap)
+        parseTrack(trackLocation, songName, trackData, txtPath, instrumentSet, instrumentMap)
         console.log(songName, "was successfully written.",)
     }
 
@@ -183,5 +169,11 @@ class MusicEditor {
     }
 }
 
-let a = new MusicEditor(__dirname + '/ff3.smc');
-console.log(a.ripTrack(0x55))
+let FF6NMusED = new MusicEditor(__dirname + '/ff3.smc');
+
+console.log(FF6NMusED.getSongContents(0x02))
+
+FF6NMusED.replaceInstrument(0x02, 'church organ', 'choir')
+FF6NMusED.replaceInstrument(0x02, 'piano', 'glockenspiel')
+
+FF6NMusED.compile('./modifiedRom.smc')
