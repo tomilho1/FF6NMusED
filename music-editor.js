@@ -1,5 +1,8 @@
 const fs = require('fs')
 const instrumentMap = new Map(Object.entries(require('./instrumentMap.json')))
+/**
+ * Stores instrument names and converts them to their Id
+ */
 const reverseMap = new Map(Object.entries(require('./reverseInstrumentMap.json')))
 
 const { toHex, readLE } = require('./hex-utils')
@@ -28,7 +31,7 @@ class MusicEditor {
         address: 0,
         instance: this.instance,
         binary: 0,
-        updateContent() {
+        updateContents() {
             let pointers = []
             for (let i = 0; i < this.instance.songsInTotal.content * 0x03; i = i + 0x03) {
                 pointers.push(this.binary.subarray(i, i + 0x03))
@@ -43,7 +46,7 @@ class MusicEditor {
         address: 0,
         instance: this.instance,
         binary: 0,
-        updateContent() {
+        updateContents() {
             let sets = []
             for (let i = 0; i < this.instance.songsInTotal.content; i++) {
                 let currentSong = this.binary.subarray(i * 0x20, i * 0x20 + 0x20)
@@ -79,14 +82,14 @@ class MusicEditor {
             ptr_trackPointers,
             ptr_trackPointers + (this.songsInTotal.content * 0x03)
         )
-        this.trackPointers.updateContent()
+        this.trackPointers.updateContents()
 
         this.instrumentSets.address = ptr_instrumentSets
         this.instrumentSets.binary = this.ROM.subarray(
             ptr_instrumentSets,
             ptr_instrumentSets + (this.songsInTotal.content * 0x20)
         )
-        this.instrumentSets.updateContent()
+        this.instrumentSets.updateContents()
     }
 
     validateSongId(songId) {
@@ -101,8 +104,8 @@ class MusicEditor {
             index: '$' + toHex(songId),
             trackLocation: toHex(this.trackPointers.content[songId] - 0xC00000),
             length: '$' + toHex(readLE(this.ROM.subarray(
-                this.trackPointers.content[songId],
-                this.trackPointers.content[songId] + 2))),
+                this.trackPointers.content[songId] - 0xC00000,
+                this.trackPointers.content[songId] + 2 - 0xC00000))),
             instrumentsLocation: toHex(this.instrumentSets.address + 0x20 * songId),
             instrumentSet: this.instrumentSets.content[songId]
         }
@@ -146,10 +149,38 @@ class MusicEditor {
         for (let i = 0, i2 = 0; i < 0x20; i = i + 2) {
             if (newSet[i] === oldInstrument) {
                 newSet[i] = newInstrument
-                this.instrumentSets.updateContent()
+                this.instrumentSets.updateContents()
                 console.log(instrumentMap.get(toHex(oldInstrument)), 'was replaced by', instrumentMap.get(toHex(newInstrument)))
                 return newSet
             }
+        }
+    }
+
+    injectInstrumentSet(songId, newSet) {
+        this.validateSongId(songId)
+        if (!(newSet instanceof Buffer)) {
+            let bi = 0
+            let buf = Buffer.alloc(0x20)
+            let unknownInstruments = []
+            for (let i = 0; i < newSet.length; i++) {
+                let instrumentId = reverseMap.get(newSet[i].toLowerCase())
+                if (instrumentId !== undefined) {
+                    buf[bi] = parseInt(instrumentId, 16)
+                    bi = bi + 2
+                } else {
+                    unknownInstruments.push(newSet[i])
+                }
+            }
+            newSet = buf
+            if (unknownInstruments.length > 0) {
+                console.log('The following instruments could not be identified:', unknownInstruments)
+            }
+        }
+
+        if (newSet instanceof Buffer || newSet.length === 0x20) {
+            newSet.copy(this.instrumentSets.binary.subarray(songId * 0x20, songId * 0x20 + 0x20))
+            this.instrumentSets.updateContents()
+            console.log('New instrument set:', newSet)
         }
     }
 
@@ -171,9 +202,11 @@ class MusicEditor {
 
 let FF6NMusED = new MusicEditor(__dirname + '/ff3.smc');
 
-console.log(FF6NMusED.getSongContents(0x02))
-
 FF6NMusED.replaceInstrument(0x02, 'church organ', 'choir')
 FF6NMusED.replaceInstrument(0x02, 'piano', 'glockenspiel')
 
-FF6NMusED.compile('./modifiedRom.smc')
+console.log(FF6NMusED.getSongContents(0x02))
+
+FF6NMusED.parseTrack(0x02, 'Opening Song')
+
+FF6NMusED.compile(__dirname + '/modifiedRom.smc')
