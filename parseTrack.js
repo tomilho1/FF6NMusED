@@ -255,22 +255,22 @@ function parseTrack (
     
     function F0() {
         gInc += 1
-        return (`Set tempo to ${track[gInc]}`)
+        return (`Set song tempo to ${track[gInc]}`)
     }
     
     function F1() {
         gInc += 2
-        return (`Set tempo to ${track[gInc - 1]} over ${track[gInc]}`)
+        return (`Set song tempo to ${track[gInc - 1]} over ${track[gInc]}`)
     }
     
     function F2() {
         gInc += 1
-        return (`Set echo volume to ${track[gInc]}`)
+        return (`Set song echo volume to ${track[gInc]}`)
     }
     
     function F3() {
         gInc += 2
-        return (`Set echo volume to ${track[gInc - 1]} over ${track[gInc]}`)
+        return (`Set song echo volume to ${track[gInc - 1]} over ${track[gInc]}`)
     }
     
     function F4() {
@@ -290,12 +290,12 @@ function parseTrack (
     
     function F7() {
         gInc += 2
-        return (`Set echo feedback to ${track[gInc]} over ${track[gInc - 1]} frames`)
+        return (`Set song echo feedback to ${track[gInc]} over ${track[gInc - 1]} frames`)
     }
     
     function F8() {
         gInc += 2
-        return (`Set filter's (??) to ${track[gInc]} and (??) to ${track[gInc - 1]}`)
+        return (`Set song filter's (??) to ${track[gInc]} and (??) to ${track[gInc - 1]}`)
     }
     
     function F9() {
@@ -359,10 +359,10 @@ function parseTrack (
     
     textFile +=
 `====================================================
--[ ${trackAddress}: ${songName} ]-
+-[ ${toHex(trackAddress)}: ${songName} ]-
 ====================================================
 -[ Header ]-----------------------------------------
-Length: $${toHex(length)}
+Length: $${toHex(length + 2)}
 Channel 1: ${toHex(address.channel1 + trackAddress)}
 Channel 2: ${toHex(address.channel2 + trackAddress)}
 Channel 3: ${toHex(address.channel3 + trackAddress)}
@@ -480,10 +480,10 @@ Channel 8: ${toHex(address.channel8 + trackAddress)}
 }
 
 // parseTrack(
-//     0x08FE43,
+//     0x200000,
 //     "Battle Theme",
-//     fs.readFileSync('./Battle Theme.bin'),
-//     './result.txt',
+//     fs.readFileSync('./trackPreset.bin'),
+//     './eitadog.txt',
 //     fs.readFileSync('./instrumentSet.bin'),
 //     new Map(Object.entries(require('./instrumentMap.json')))
 //     )
