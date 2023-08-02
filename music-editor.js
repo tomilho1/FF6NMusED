@@ -5,7 +5,7 @@ const instrumentMap = new Map(Object.entries(require('./instrumentMap.json')))
  */
 const reverseMap = new Map(Object.entries(require('./reverseInstrumentMap.json')))
 
-const { toHex, readLE } = require('./hex-utils')
+const { toHex, readLE, readTrackPointer } = require('./hex-utils')
 const parseTrack = require('./parseTrack')
 
 class MusicEditor {
@@ -111,13 +111,42 @@ class MusicEditor {
         }
     }
 
-    ripTrack(songId) {
+    ripTrackData(songId) {
         this.validateSongId(songId)
-        let trackLocation = this.trackPointers.content[songId] - 0xC00000
-        // First two bytes of a track stores it's length:
-        let trackLength = readLE(this.ROM.subarray(trackLocation, trackLocation + 2))
-        // + 2 at the end because those first 2 bytes don't count themselves:
-        return this.ROM.subarray(trackLocation, trackLocation + trackLength + 2)
+
+        const trackAddress = this.trackPointers.content[songId] - 0xC00000
+
+        const trackLength = readLE(this.ROM.subarray(
+            trackAddress,
+            trackAddress + 2,
+        )) + 2
+
+        const lastByteAddress = trackAddress + trackLength + 1
+
+        const track = this.ROM.subarray(
+            trackAddress,
+            trackAddress + trackLength
+        )
+
+        // Absolute pointers point to an address of the ROM. Relative pointers, in the other hand, point
+        // to the channel's address relative to its track.
+        const absolutePointers = []
+        const relativePointers = []
+        for (let i = 0x06; i <= 0x14; i = i + 2) {
+            let pointer = readTrackPointer(track.subarray(i, i + 2), trackAddress, lastByteAddress)
+
+            absolutePointers.push(pointer)
+            relativePointers.push(pointer - trackAddress)
+        }
+
+        return {
+            address: trackAddress,
+            length: trackLength,
+            nextByte: lastByteAddress,
+            track: track,
+            channelPointers: absolutePointers,
+            relativeChannelPointers: relativePointers
+        }
     }
 
     ripInstrumentSet(songId) {
@@ -185,13 +214,10 @@ class MusicEditor {
     }
 
     parseTrack(songId, songName = "Unnamed", txtPath = `${__dirname}/${songName}.txt`) {
-        this.validateSongId(songId)
+        const trackData = this.ripTrackData(songId)
+        const instrumentData = this.ripInstrumentSet(songId)
 
-        let trackLocation = this.trackPointers.content[songId] - 0xC00000
-        let trackData = this.ripTrack(songId)
-        let instrumentSet = this.ripInstrumentSet(songId)
-
-        parseTrack(trackLocation, songName, trackData, txtPath, instrumentSet, instrumentMap)
+        parseTrack(trackData.address, songName, trackData.track, txtPath, instrumentData, instrumentMap)
         console.log(songName, "was successfully written.",)
     }
 
@@ -202,11 +228,4 @@ class MusicEditor {
 
 let FF6NMusED = new MusicEditor(__dirname + '/ff3.smc');
 
-FF6NMusED.replaceInstrument(0x02, 'church organ', 'choir')
-FF6NMusED.replaceInstrument(0x02, 'piano', 'glockenspiel')
-
-console.log(FF6NMusED.getSongContents(0x02))
-
-FF6NMusED.parseTrack(0x02, 'Opening Song')
-
-FF6NMusED.compile(__dirname + '/modifiedRom.smc')
+FF6NMusED.parseTrack(0x24, 'Battle Theme')
