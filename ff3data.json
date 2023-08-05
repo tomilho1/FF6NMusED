@@ -1,1495 +1,1257 @@
 [
   {
-    "songID": "$00",
-    "songName": "(Silence)",
-    "songLocation": "085C7A",
-    "instrumentsLocation": "053F95",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": []
-  },
-  {
-    "songID": "$01",
-    "songName": "The Prelude",
-    "songLocation": "085CA0",
-    "instrumentsLocation": "053FB5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "27, 0, 7, 0, 13, 0, 6, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Harp",
-      "Flute",
-      "Strings",
-      "Choir",
-      "Bass Section"
-    ]
-  },
-  {
-    "songID": "$02",
-    "songName": "Opening Theme #1",
-    "songLocation": "0983DB",
-    "instrumentsLocation": "053FD5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "37, 0, 58, 0, 56, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Church Organ",
-      "Female Voice",
-      "Male Voice",
-      "Piano"
-    ]
-  },
-  {
-    "songID": "$03",
-    "songName": "Opening Theme #2",
-    "songLocation": "08B49D",
-    "instrumentsLocation": "053FF5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 8, 0, 27, 0, 14, 0, 28, 0, 7, 0, 36, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "French Horn",
-      "Harp",
-      "Trumpet",
-      "Digital Bass",
-      "Flute",
-      "Tubular Bell",
-      "Tuba"
-    ]
-  },
-  {
-    "songID": "$04",
-    "songName": "Opening Theme #3",
-    "songLocation": "08C882",
-    "instrumentsLocation": "054015",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "10, 0, 13, 0, 27, 0, 8, 0, 20, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Oboe",
-      "Strings",
-      "Harp",
-      "French Horn",
-      "Snare",
-      "Electric Bass"
-    ]
-  },
-  {
-    "songID": "$05",
-    "songName": "Awakening",
-    "songLocation": "08641E",
-    "instrumentsLocation": "054035",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "12, 0, 7, 0, 27, 0, 13, 0, 28, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Piano",
-      "Flute",
-      "Harp",
-      "Strings",
-      "Digital Bass",
-      "Oboe"
-    ]
-  },
-  {
-    "songID": "$06",
-    "songName": "Terra",
-    "songLocation": "086733",
-    "instrumentsLocation": "054055",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "3, 0, 18, 0, 13, 0, 29, 0, 8, 0, 22, 0, 28, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Pan Flute",
-      "Crash Cymbal",
-      "Strings",
-      "Banjo",
-      "French Horn",
-      "Timpani",
-      "Digital Bass",
-      "Snare"
-    ]
-  },
-  {
-    "songID": "$07",
-    "songName": "Shadow",
-    "songLocation": "086D69",
-    "instrumentsLocation": "054075",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "16, 0, 31, 0, 50, 0, 24, 0, 15, 0, 17, 0, 34, 0, 20, 0, 43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Shadow's Picked String",
-      "Whistle",
-      "Acoustic Guitar",
-      "Acoustic Bass",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Kick",
-      "Snare",
-      "?? Synth"
-    ]
-  },
-  {
-    "songID": "$08",
-    "songName": "Strago",
-    "songLocation": "0870C5",
-    "instrumentsLocation": "054095",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "7, 0, 11, 0, 10, 0, 4, 0, 2, 0, 34, 0, 17, 0, 42, 0, 48, 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Flute",
-      "Rock Organ",
-      "Oboe",
-      "Mog Banjo",
-      "Electric Bass",
-      "Kick",
-      "Open Hi Hat",
-      "Snapping Fingers",
-      "Wood Block",
-      "Cow Bell"
-    ]
-  },
-  {
-    "songID": "$09",
-    "songName": "Gau",
-    "songLocation": "0874BF",
-    "instrumentsLocation": "0540B5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "5, 0, 7, 0, 50, 0, 13, 0, 1, 0, 27, 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Cello",
-      "Flute",
-      "Acoustic Guitar",
-      "Strings",
-      "Spanish Guitar",
-      "Harp",
-      "Digital Bass"
-    ]
-  },
-  {
-    "songID": "$0A",
-    "songName": "Edgar & Sabin",
-    "songLocation": "0878F8",
-    "instrumentsLocation": "0540D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "14, 0, 13, 0, 8, 0, 18, 0, 22, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Trumpet",
-      "Strings",
-      "French Horn",
-      "Crash Cymbal",
-      "Timpani",
-      "Tuba"
-    ]
-  },
-  {
-    "songID": "$0B",
-    "songName": "Coin Song",
-    "songLocation": "087CAF",
-    "instrumentsLocation": "0540F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "7, 0, 13, 0, 10, 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Flute",
-      "Strings",
-      "Oboe",
-      "Digital Bass"
-    ]
-  },
-  {
-    "songID": "$0C",
-    "songName": "Cyan",
-    "songLocation": "088028",
-    "instrumentsLocation": "054115",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "8, 0, 52, 0, 13, 0, 55, 0, 18, 0, 22, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "French Horn",
-      "Shakuhachi",
-      "Strings",
-      "Tambourine",
-      "Crash Cymbal",
-      "Timpani",
-      "Bass Section"
-    ]
-  },
-  {
-    "songID": "$0D",
-    "songName": "Locke",
-    "songLocation": "088438",
-    "instrumentsLocation": "054135",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 8, 0, 18, 0, 20, 0, 22, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "French Horn",
-      "Crash Cymbal",
-      "Snare",
-      "Timpani",
-      "Bass Section"
-    ]
-  },
-  {
-    "songID": "$0E",
-    "songName": "Forever Rachel",
-    "songLocation": "08889A",
-    "instrumentsLocation": "054155",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "27, 0, 28, 0, 8, 0, 10, 0, 7, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Harp",
-      "Digital Bass",
-      "French Horn",
-      "Oboe",
-      "Flute",
-      "Strings"
-    ]
-  },
-  {
-    "songID": "$0F",
-    "songName": "Relm",
-    "songLocation": "088BED",
-    "instrumentsLocation": "054175",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "51, 0, 7, 0, 10, 0, 27, 0, 29, 0, 13, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Bagpipe",
-      "Flute",
-      "Oboe",
-      "Harp",
-      "Banjo",
-      "Strings",
-      "French Horn"
-    ]
-  },
-  {
-    "songID": "$10",
-    "songName": "Setzer",
-    "songLocation": "088F56",
-    "instrumentsLocation": "054195",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 8, 0, 14, 0, 18, 0, 20, 0, 22, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "French Horn",
-      "Trumpet",
-      "Crash Cymbal",
-      "Snare",
-      "Timpani",
-      "Bass Section"
-    ]
-  },
-  {
-    "songID": "$11",
-    "songName": "Epitaph",
-    "songLocation": "08956F",
-    "instrumentsLocation": "0541B5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "49, 0, 1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Bright Piano",
-      "Spanish Guitar",
-      "Flute"
-    ]
-  },
-  {
-    "songID": "$12",
-    "songName": "Celes",
-    "songLocation": "089829",
-    "instrumentsLocation": "0541D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "7, 0, 13, 0, 27, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Flute",
-      "Strings",
-      "Harp",
-      "Glockespiel"
-    ]
-  },
-  {
-    "songID": "$13",
-    "songName": "Techno de Chocobo",
-    "songLocation": "089B62",
-    "instrumentsLocation": "0541F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "30, 0, 11, 0, 28, 0, 15, 0, 17, 0, 47, 0, 20, 0, 34, 0, 39, 0, 40, 0, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Distortion Guitar",
-      "Rock Organ",
-      "Digital Bass",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Shaker",
-      "Snare",
-      "Kick",
-      "Synth",
-      "More Synth",
-      "Even More Synth"
-    ]
-  },
-  {
-    "songID": "$14",
-    "songName": "The Decisive Battle",
-    "songLocation": "08A5D4",
-    "instrumentsLocation": "054215",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 11, 0, 30, 0, 28, 0, 18, 0, 15, 0, 17, 0, 34, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Rock Organ",
-      "Distortion Guitar",
-      "Digital Bass",
-      "Crash Cymbal",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Kick",
-      "Hard Snare"
-    ]
-  },
-  {
-    "songID": "$15",
-    "songName": "Johnny C Bad",
-    "songLocation": "08AD36",
-    "instrumentsLocation": "054235",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "12, 0, 50, 0, 24, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Piano",
-      "Acoustic Guitar",
-      "Acoustic Bass",
-      "Snare"
-    ]
-  },
-  {
-    "songID": "$16",
-    "songName": "Kefka",
-    "songLocation": "08B7B8",
-    "instrumentsLocation": "054255",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "25, 0, 13, 0, 14, 0, 8, 0, 10, 0, 7, 0, 27, 0, 22, 0, 20, 0, 18, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Pizzo String",
-      "Strings",
-      "Trumpet",
-      "French Horn",
-      "Oboe",
-      "Flute",
-      "Harp",
-      "Timpani",
-      "Snare",
-      "Crash Cymbal",
-      "Bass Section"
-    ]
-  },
-  {
-    "songID": "$17",
-    "songName": "The Mines of Narshe",
-    "songLocation": "08BFE8",
-    "instrumentsLocation": "054275",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 24, 0, 27, 0, 21, 0, 12, 0, 10, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Acoustic Bass",
-      "Harp",
-      "Snapping fingers",
-      "Piano",
-      "Oboe",
-      "Breath (like Narshe)"
-    ]
-  },
-  {
-    "songID": "$18",
-    "songName": "The Phantom Forest",
-    "songLocation": "08C24C",
-    "instrumentsLocation": "054295",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "7, 0, 13, 0, 6, 0, 50, 0, 24, 0, 10, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Flute",
-      "Strings",
-      "Choir",
-      "Acoustic Guitar",
-      "Acoustic Bass",
-      "Oboe",
-      "Breath (like Narshe)"
-    ]
-  },
-  {
-    "songID": "$19",
-    "songName": "Wild West",
-    "songLocation": "08CEC1",
-    "instrumentsLocation": "0542B5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "23, 0, 34, 0, 47, 0, 10, 0, 46, 0, 13, 0, 45, 0, 44, 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Conga Drum (Tom)",
-      "Kick",
-      "Shaker",
-      "Oboe",
-      "Conga Drum",
-      "Strings",
-      "Guiro",
-      "Bass Section",
-      "Cow Bell"
-    ]
-  },
-  {
-    "songID": "$1A",
-    "songName": "Save Them!",
-    "songLocation": "08D330",
-    "instrumentsLocation": "0542D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 14, 0, 44, 0, 18, 0, 20, 0, 22, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Trumpet",
-      "Bass Section",
-      "Crash Cymbal",
-      "Snare",
-      "Timpani",
-      "Tuba"
-    ]
-  },
-  {
-    "songID": "$1B",
-    "songName": "The Empire 'Gestahl'",
-    "songLocation": "08DA56",
-    "instrumentsLocation": "0542F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "14, 0, 8, 0, 13, 0, 20, 0, 36, 0, 28, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Trumpet",
-      "French Horn",
-      "Strings",
-      "Snare",
-      "Tubular Bell",
-      "Digital Bass",
-      "Timpani"
-    ]
-  },
-  {
-    "songID": "$1C",
-    "songName": "Troops March On",
-    "songLocation": "08DDBF",
-    "instrumentsLocation": "054315",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 14, 0, 8, 0, 2, 0, 20, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Trumpet",
-      "French Horn",
-      "Electric Bass",
-      "Snare",
-      "Timpani"
-    ]
-  },
-  {
-    "songID": "$1D",
-    "songName": "Under Martial Law",
-    "songLocation": "08E16B",
-    "instrumentsLocation": "054335",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "27, 0, 13, 0, 10, 0, 8, 0, 2, 0, 15, 0, 17, 0, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Harp",
-      "Strings",
-      "Oboe",
-      "French Horn",
-      "Electric Bass",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Kick"
-    ]
-  },
-  {
-    "songID": "$1E",
-    "songName": "(Water Flowing)",
-    "songLocation": "08E357",
-    "instrumentsLocation": "054355",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": []
-  },
-  {
-    "songID": "$1F",
-    "songName": "Metamorphosis",
-    "songLocation": "08E3E2",
-    "instrumentsLocation": "054375",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 14, 0, 8, 0, 2, 0, 18, 0, 34, 0, 33, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Trumpet",
-      "French Horn",
-      "Electric Bass",
-      "Crash Cymbal",
-      "Kick",
-      "Hard Snare",
-      "Conga Drum (Tom)"
-    ]
-  },
-  {
-    "songID": "$20",
-    "songName": "Phantom Train",
-    "songLocation": "08EA48",
-    "instrumentsLocation": "054395",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "50, 0, 14, 0, 13, 0, 44, 0, 26, 0, 22, 0, 7, 0, 20, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Acoustic Guitar",
-      "Trumpet",
-      "Strings",
-      "Bass Section",
-      "Tuba",
-      "Timpani",
-      "Flute",
-      "Snare",
-      "Closed Hi Hat"
-    ]
-  },
-  {
-    "songID": "$21",
-    "songName": "Another World of Beasts",
-    "songLocation": "08EFA6",
-    "instrumentsLocation": "0543B5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "12, 0, 27, 0, 7, 0, 13, 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Piano",
-      "Harp",
-      "Flute",
-      "Strings",
-      "Digital Bass"
-    ]
-  },
-  {
-    "songID": "$22",
-    "songName": "Grand Finale #2",
-    "songLocation": "08F472",
-    "instrumentsLocation": "0543D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "8, 0, 14, 0, 13, 0, 44, 0, 18, 0, 20, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "French Horn",
-      "Trumpet",
-      "Strings",
-      "Bass Section",
-      "Crash Cymbal",
-      "Snare",
-      "Timpani"
-    ]
-  },
-  {
-    "songID": "$23",
-    "songName": "Mt. Koltz",
-    "songLocation": "08FA15",
-    "instrumentsLocation": "0543F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 8, 0, 11, 0, 27, 0, 30, 0, 2, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "French Horn",
-      "Rock Organ",
-      "Harp",
-      "Distortion Guitar",
-      "Electric Bass",
-      "Conga Drum (Tom)"
-    ]
-  },
-  {
-    "songID": "$24",
-    "songName": "Battle Theme",
-    "songLocation": "08FE43",
-    "instrumentsLocation": "054415",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 14, 0, 30, 0, 2, 0, 15, 0, 17, 0, 18, 0, 34, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Trumpet",
-      "Distortion Guitar",
-      "Electric Bass",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Crash Cymbal",
-      "Kick",
-      "Snare"
-    ]
-  },
-  {
-    "songID": "$25",
-    "songName": "(Fanfare, slow)",
-    "songLocation": "09054B",
-    "instrumentsLocation": "054435",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "14, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Trumpet",
-      "Tuba"
-    ]
-  },
-  {
-    "songID": "$26",
-    "songName": "The Wedding #1",
-    "songLocation": "0905E9",
-    "instrumentsLocation": "054455",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "7, 0, 27, 0, 13, 0, 44, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Flute",
-      "Harp",
-      "Strings",
-      "Bass Section",
-      "Snare"
-    ]
-  },
-  {
-    "songID": "$27",
-    "songName": "Aria de Mezzo Carattere",
-    "songLocation": "090A66",
-    "instrumentsLocation": "054475",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "58, 0, 13, 0, 44, 0, 27, 0, 8, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Female Voice",
-      "Strings",
-      "Bass Section",
-      "Harp",
-      "French Horn",
-      "Female Voice"
-    ]
-  },
-  {
-    "songID": "$28",
-    "songName": "The Serpent Trench",
-    "songLocation": "0990B6",
-    "instrumentsLocation": "054495",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "8, 0, 13, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "French Horn",
-      "Strings",
-      "Bass Section"
-    ]
-  },
-  {
-    "songID": "$29",
-    "songName": "Slam Shuffle",
-    "songLocation": "0993A2",
-    "instrumentsLocation": "0544B5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": []
-  },
-  {
-    "songID": "$2A",
-    "songName": "Kids Run Through the City Corner",
-    "songLocation": "09149C",
-    "instrumentsLocation": "0544D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "53, 0, 24, 0, 50, 0, 13, 0, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Kids Flute 1",
-      "Acoustic Bass",
-      "Acoustic Guitar",
-      "Strings",
-      "Kids Flute 2"
-    ]
-  },
-  {
-    "songID": "$2B",
-    "songName": "?? [Crazy Old Man's House]",
-    "songLocation": "098E14",
-    "instrumentsLocation": "0544F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "62, 0, 45, 0, 48, 0, 38, 0, 55, 0, 47, 0, 17, 0, 23, 0, 34, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Xylophone",
-      "Guiro",
-      "Wood Block",
-      "Woot",
-      "Tambourine",
-      "Shaker",
-      "Open Hi Hat",
-      "Conga Drum (Tom)",
-      "Kick",
-      "Snare"
-    ]
-  },
-  {
-    "songID": "$2C",
-    "songName": "Grand Finale #1",
-    "songLocation": "09975F",
-    "instrumentsLocation": "054515",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Crowd Noise"
-    ]
-  },
-  {
-    "songID": "$2D",
-    "songName": "Gogo",
-    "songLocation": "091A4C",
-    "instrumentsLocation": "054535",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "10, 0, 7, 0, 8, 0, 14, 0, 2, 0, 22, 0, 18, 0, 15, 0, 17, 0, 34, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Oboe",
-      "Flute",
-      "French Horn",
-      "Trumpet",
-      "Electric Bass",
-      "Timpani",
-      "Crash Cymbal",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Kick",
-      "Snare"
-    ]
-  },
-  {
-    "songID": "$2E",
-    "songName": "Returners",
-    "songLocation": "091EDD",
-    "instrumentsLocation": "054555",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "8, 0, 14, 0, 13, 0, 44, 0, 18, 0, 28, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "French Horn",
-      "Trumpet",
-      "Strings",
-      "Bass Section",
-      "Crash Cymbal",
-      "Digital Bass",
-      "Snare"
-    ]
-  },
-  {
-    "songID": "$2F",
-    "songName": "Fanfare",
-    "songLocation": "09268F",
-    "instrumentsLocation": "054575",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "14, 0, 2, 0, 30, 0, 20, 0, 15, 0, 17, 0, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Trumpet",
-      "Electric Bass",
-      "Distortion Guitar",
-      "Snare",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Kick"
-    ]
-  },
-  {
-    "songID": "$30",
-    "songName": "Umaro",
-    "songLocation": "092997",
-    "instrumentsLocation": "054595",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "48, 0, 10, 0, 14, 0, 7, 0, 13, 0, 8, 0, 2, 0, 22, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Wood Block",
-      "Oboe",
-      "Trumpet",
-      "Flute",
-      "Strings",
-      "French Horn",
-      "Electric Bass",
-      "Timpani",
-      "Crash Cymbal"
-    ]
-  },
-  {
-    "songID": "$31",
-    "songName": "Mog",
-    "songLocation": "092E0B",
-    "instrumentsLocation": "0545B5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "8, 0, 14, 0, 10, 0, 50, 0, 4, 0, 2, 0, 15, 0, 17, 0, 34, 0, 33, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "French Horn",
-      "Trumpet",
-      "Oboe",
-      "Acoustic Guitar",
-      "Mog Banjo",
-      "Electric Bass",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Kick",
-      "Hard Snare",
-      "Tuba"
-    ]
-  },
-  {
-    "songID": "$32",
-    "songName": "The Unforgiven",
-    "songLocation": "093258",
-    "instrumentsLocation": "0545D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 14, 0, 7, 0, 8, 0, 18, 0, 20, 0, 22, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Trumpet",
-      "Flute",
-      "French Horn",
-      "Crash Cymbal",
-      "Snare",
-      "Timpani",
-      "Bass Section"
-    ]
-  },
-  {
-    "songID": "$33",
-    "songName": "The Fierce Battle",
-    "songLocation": "0937FF",
-    "instrumentsLocation": "0545F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "7, 0, 14, 0, 8, 0, 13, 0, 44, 0, 20, 0, 18, 0, 22, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Flute",
-      "Trumpet",
-      "French Horn",
-      "Strings",
-      "Bass Section",
-      "Snare",
-      "Crash Cymbal",
-      "Timpani",
-      "Unusual Synth (Atma)"
-    ]
-  },
-  {
-    "songID": "$34",
-    "songName": "The Day After",
-    "songLocation": "093FAE",
-    "instrumentsLocation": "054615",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "10, 0, 7, 0, 27, 0, 50, 0, 29, 0, 2, 0, 47, 0, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Oboe",
-      "Flute",
-      "Harp",
-      "Acoustic Guitar",
-      "Banjo",
-      "Electric Bass",
-      "Shaker",
-      "Kick"
-    ]
-  },
-  {
-    "songID": "$35",
-    "songName": "Blackjack",
-    "songLocation": "094465",
-    "instrumentsLocation": "054635",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 14, 0, 8, 0, 2, 0, 15, 0, 17, 0, 34, 0, 20, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Trumpet",
-      "French Horn",
-      "Electric Bass",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Kick",
-      "Snare",
-      "Flute"
-    ]
-  },
-  {
-    "songID": "$36",
-    "songName": "Catastrophe",
-    "songLocation": "094AB3",
-    "instrumentsLocation": "054655",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 7, 0, 8, 0, 44, 0, 28, 0, 22, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Flute",
-      "French Horn",
-      "Bass Section",
-      "Digital Bass",
-      "Timpani",
-      "Crash Cymbal"
-    ]
-  },
-  {
-    "songID": "$37",
-    "songName": "The Magic House",
-    "songLocation": "094D6F",
-    "instrumentsLocation": "054675",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "10, 0, 7, 0, 50, 0, 13, 0, 44, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Oboe",
-      "Flute",
-      "Acoustic Guitar",
-      "Strings",
-      "Bass Section",
-      "Electric Bass"
-    ]
-  },
-  {
-    "songID": "$38",
-    "songName": "(Nighty Night)",
-    "songLocation": "095316",
-    "instrumentsLocation": "054695",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Piano"
-    ]
-  },
-  {
-    "songID": "$39",
-    "songName": "(Wind)",
-    "songLocation": "0953DB",
-    "instrumentsLocation": "0546B5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Hard Snare"
-    ]
-  },
-  {
-    "songID": "$3A",
-    "songName": "(Waves)",
-    "songLocation": "0954C5",
-    "instrumentsLocation": "0546D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": []
-  },
-  {
-    "songID": "$3B",
-    "songName": "Dancing Mad #1",
-    "songLocation": "095557",
-    "instrumentsLocation": "0546F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "37, 0, 59, 0, 58, 0, 56, 0, 20, 0, 22, 0, 18, 0, 36, 0, 28, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Church Organ",
-      "Pipe Organ",
-      "Female Voice",
-      "Male Voice",
-      "Snare",
-      "Timpani",
-      "Crash Cymbal",
-      "Tubular Bell",
-      "Digital Bass",
-      "Breath (like Narshe)"
-    ]
-  },
-  {
-    "songID": "$3C",
-    "songName": "(Phantom Train Stopping)",
-    "songLocation": "0962C9",
-    "instrumentsLocation": "054715",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": []
-  },
-  {
-    "songID": "$3D",
-    "songName": "Spinach Rag",
-    "songLocation": "0963CD",
-    "instrumentsLocation": "054735",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Piano"
-    ]
-  },
-  {
-    "songID": "$3E",
-    "songName": "Rest in Peace",
-    "songLocation": "096903",
-    "instrumentsLocation": "054755",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "7, 0, 13, 0, 44, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Flute",
-      "Strings",
-      "Bass Section",
-      "Harp"
-    ]
-  },
-  {
-    "songID": "$3F",
-    "songName": "(Chocobos Running)",
-    "songLocation": "096A6E",
-    "instrumentsLocation": "054775",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": []
-  },
-  {
-    "songID": "$40",
-    "songName": "(Walking out of Zozo)",
-    "songLocation": "096B19",
-    "instrumentsLocation": "054795",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": []
-  },
-  {
-    "songID": "$41",
-    "songName": "Overture #1",
-    "songLocation": "096BC2",
-    "instrumentsLocation": "0547B5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 27, 0, 44, 0, 20, 0, 18, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Harp",
-      "Bass Section",
-      "Snare",
-      "Crash Cymbal",
-      "Timpani"
-    ]
-  },
-  {
-    "songID": "$42",
-    "songName": "Overture #2",
-    "songLocation": "0970DA",
-    "instrumentsLocation": "0547D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 44, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Bass Section",
-      "Low Male Voice"
-    ]
-  },
-  {
-    "songID": "$43",
-    "songName": "Overture #3",
-    "songLocation": "0971C9",
-    "instrumentsLocation": "0547F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 14, 0, 44, 0, 8, 0, 20, 0, 18, 0, 22, 0, 7, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Trumpet",
-      "Bass Section",
-      "French Horn",
-      "Snare",
-      "Crash Cymbal",
-      "Timpani",
-      "Flute",
-      "Acoustic Guitar"
-    ]
-  },
-  {
-    "songID": "$44",
-    "songName": "The Wedding #2",
-    "songLocation": "097A06",
-    "instrumentsLocation": "054815",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 44, 0, 18, 0, 20, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Bass Section",
-      "Crash Cymbal",
-      "Snare",
-      "Timpani"
-    ]
-  },
-  {
-    "songID": "$45",
-    "songName": "The Wedding #3",
-    "songLocation": "097CEB",
-    "instrumentsLocation": "054835",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 44, 0, 57, 0, 58, 0, 56, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Bass Section",
-      "Low Male Voice",
-      "Female Voice",
-      "Male Voice",
-      "Trumpet"
-    ]
-  },
-  {
-    "songID": "$46",
-    "songName": "The Wedding #4",
-    "songLocation": "097F7C",
-    "instrumentsLocation": "054855",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 44, 0, 18, 0, 20, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Bass Section",
-      "Crash Cymbal",
-      "Snare",
-      "Timpani"
-    ]
-  },
-  {
-    "songID": "$47",
-    "songName": "Devil's Lab",
-    "songLocation": "098842",
-    "instrumentsLocation": "054875",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "14, 0, 13, 0, 44, 0, 28, 0, 61, 0, 60, 0, 34, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Trumpet",
-      "Strings",
-      "Bass Section",
-      "Digital Bass",
-      "Metal Clank",
-      "Metal Bang",
-      "Kick",
-      "Hard Snare"
-    ]
-  },
-  {
-    "songID": "$48",
-    "songName": "(Esper Attack)",
-    "songLocation": "098C99",
-    "instrumentsLocation": "054895",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": []
-  },
-  {
-    "songID": "$49",
-    "songName": "(Cranes)",
-    "songLocation": "098CE8",
-    "instrumentsLocation": "0548B5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Metal Clank"
-    ]
-  },
-  {
-    "songID": "$4A",
-    "songName": "(Burning House)",
-    "songLocation": "098D85",
-    "instrumentsLocation": "0548D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": []
-  },
-  {
-    "songID": "$4B",
-    "songName": "New Continent",
-    "songLocation": "0997DF",
-    "instrumentsLocation": "0548F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 27, 0, 20, 0, 26, 0, 18, 0, 22, 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Harp",
-      "Snare",
-      "Tuba",
-      "Crash Cymbal",
-      "Timpani",
-      "Digital Bass"
-    ]
-  },
-  {
-    "songID": "$4C",
-    "songName": "Searching for Friends",
-    "songLocation": "099DBF",
-    "instrumentsLocation": "054915",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "3, 0, 13, 0, 28, 0, 17, 0, 15, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Pan Flute",
-      "Strings",
-      "Digital Bass",
-      "Open Hi Hat",
-      "Closed Hi Hat",
-      "Choir"
-    ]
-  },
-  {
-    "songID": "$4D",
-    "songName": "Fanatics",
-    "songLocation": "09A24F",
-    "instrumentsLocation": "054935",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "56, 0, 58, 0, 57, 0, 55, 0, 22, 0, 18, 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Male Voice",
-      "Female Voice",
-      "Low Male Voice",
-      "Tambourine",
-      "Timpani",
-      "Crash Cymbal",
-      "Church Organ"
-    ]
-  },
-  {
-    "songID": "$4E",
-    "songName": "Last Dungeon",
-    "songLocation": "09A3D8",
-    "instrumentsLocation": "054955",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "14, 0, 22, 0, 13, 0, 28, 0, 20, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Trumpet",
-      "Timpani",
-      "Strings",
-      "Digital Bass",
-      "Snare",
-      "Crash Cymbal"
-    ]
-  },
-  {
-    "songID": "$4F",
-    "songName": "Dark World",
-    "songLocation": "09AC51",
-    "instrumentsLocation": "054975",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "37, 0, 49, 0, 36, 0, 7, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Church Organ",
-      "Bright Piano",
-      "Tubular Bell",
-      "Flute",
-      "Piano"
-    ]
-  },
-  {
-    "songID": "$50",
-    "songName": "Dancing Mad #3",
-    "songLocation": "09AE9F",
-    "instrumentsLocation": "054995",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "11, 0, 30, 0, 28, 0, 18, 0, 15, 0, 17, 0, 23, 0, 33, 0, 34, 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Rock Organ",
-      "Distortion Guitar",
-      "Digital Bass",
-      "Crash Cymbal",
-      "Closed Hi Hat",
-      "Open Hi Hat",
-      "Conga Drum (Tom)",
-      "Hard Snare",
-      "Kick",
-      "Church Organ"
-    ]
-  },
-  {
-    "songID": "$52",
-    "songName": "Dancing Mad #2",
-    "songLocation": "09B9B9",
-    "instrumentsLocation": "0549D5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "37, 0, 58, 0, 56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Church Organ",
-      "Female Voice",
-      "Male Voice"
-    ]
-  },
-  {
-    "songID": "$53",
-    "songName": "Ending Theme #1",
-    "songLocation": "09BAF9",
-    "instrumentsLocation": "0549F5",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 44, 0, 7, 0, 10, 0, 14, 0, 8, 0, 26, 0, 18, 0, 20, 0, 22, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Bass Section",
-      "Flute",
-      "Oboe",
-      "Trumpet",
-      "French Horn",
-      "Tuba",
-      "Crash Cymbal",
-      "Snare",
-      "Timpani",
-      "Harp"
-    ]
-  },
-  {
-    "songID": "$54",
-    "songName": "Ending Theme #2",
-    "songLocation": "09DF3F",
-    "instrumentsLocation": "054A15",
-    "instrumentData": {
-      "type": "Buffer",
-      "data": "13, 0, 44, 0, 7, 0, 10, 0, 14, 0, 8, 0, 26, 0, 18, 0, 20, 0, 22, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-    },
-    "instrumentSet": [
-      "Strings",
-      "Bass Section",
-      "Flute",
-      "Oboe",
-      "Trumpet",
-      "French Horn",
-      "Tuba",
-      "Crash Cymbal",
-      "Snare",
-      "Timpani",
-      "Harp"
-    ]
+    "name": "(Silence)",
+    "index": "$00",
+    "trackLocation": "085C7A",
+    "trackLength": "$24",
+    "instrumentSet": [],
+    "instrumentsLocation": "053F95"
+  },
+  {
+    "name": "The Prelude",
+    "index": "$01",
+    "trackLocation": "085CA0",
+    "trackLength": "$077C",
+    "instrumentSet": [
+      "Harp ($1B)",
+      "Flute ($07)",
+      "Strings ($0D)",
+      "Choir ($06)",
+      "Bass Section ($2C)"
+    ],
+    "instrumentsLocation": "053FB5"
+  },
+  {
+    "name": "Opening Theme #1",
+    "index": "$02",
+    "trackLocation": "0983DB",
+    "trackLength": "$0465",
+    "instrumentSet": [
+      "Church Organ ($25)",
+      "Female Voice ($3A)",
+      "Male Voice ($38)",
+      "Piano ($0C)"
+    ],
+    "instrumentsLocation": "053FD5"
+  },
+  {
+    "name": "Opening Theme #2",
+    "index": "$03",
+    "trackLocation": "08B49D",
+    "trackLength": "$0319",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "French Horn ($08)",
+      "Harp ($1B)",
+      "Trumpet ($0E)",
+      "Digital Bass ($1C)",
+      "Flute ($07)",
+      "Tubular Bell ($24)",
+      "Tuba ($1A)"
+    ],
+    "instrumentsLocation": "053FF5"
+  },
+  {
+    "name": "Opening Theme #3",
+    "index": "$04",
+    "trackLocation": "08C882",
+    "trackLength": "$063D",
+    "instrumentSet": [
+      "Oboe ($0A)",
+      "Strings ($0D)",
+      "Harp ($1B)",
+      "French Horn ($08)",
+      "Snare ($14)",
+      "Electric Bass ($02)"
+    ],
+    "instrumentsLocation": "054015"
+  },
+  {
+    "name": "Awakening",
+    "index": "$05",
+    "trackLocation": "08641E",
+    "trackLength": "$0313",
+    "instrumentSet": [
+      "Piano ($0C)",
+      "Flute ($07)",
+      "Harp ($1B)",
+      "Strings ($0D)",
+      "Digital Bass ($1C)",
+      "Oboe ($0A)"
+    ],
+    "instrumentsLocation": "054035"
+  },
+  {
+    "name": "Terra",
+    "index": "$06",
+    "trackLocation": "086733",
+    "trackLength": "$0634",
+    "instrumentSet": [
+      "Pan Flute ($03)",
+      "Crash Cymbal ($12)",
+      "Strings ($0D)",
+      "Banjo ($1D)",
+      "French Horn ($08)",
+      "Timpani ($16)",
+      "Digital Bass ($1C)",
+      "Snare ($14)"
+    ],
+    "instrumentsLocation": "054055"
+  },
+  {
+    "name": "Shadow",
+    "index": "$07",
+    "trackLocation": "086D69",
+    "trackLength": "$035A",
+    "instrumentSet": [
+      "Shadow's Picked String ($10)",
+      "Whistle ($1F)",
+      "Acoustic Guitar ($32)",
+      "Acoustic Bass ($18)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Kick ($22)",
+      "Snare ($14)",
+      "Weird Sound ($2B)"
+    ],
+    "instrumentsLocation": "054075"
+  },
+  {
+    "name": "Strago",
+    "index": "$08",
+    "trackLocation": "0870C5",
+    "trackLength": "$03F8",
+    "instrumentSet": [
+      "Flute ($07)",
+      "Rock Organ ($0B)",
+      "Oboe ($0A)",
+      "Mog Banjo ($04)",
+      "Electric Bass ($02)",
+      "Kick ($22)",
+      "Open Hi Hat ($11)",
+      "Snapping Fingers ($2A)",
+      "Wood Block ($30)",
+      "Cow Bell ($23)"
+    ],
+    "instrumentsLocation": "054095"
+  },
+  {
+    "name": "Gau",
+    "index": "$09",
+    "trackLocation": "0874BF",
+    "trackLength": "$0437",
+    "instrumentSet": [
+      "Cello ($05)",
+      "Flute ($07)",
+      "Acoustic Guitar ($32)",
+      "Strings ($0D)",
+      "Spanish Guitar ($01)",
+      "Harp ($1B)",
+      "Digital Bass ($1C)"
+    ],
+    "instrumentsLocation": "0540B5"
+  },
+  {
+    "name": "Edgar & Sabin",
+    "index": "$0A",
+    "trackLocation": "0878F8",
+    "trackLength": "$03B5",
+    "instrumentSet": [
+      "Trumpet ($0E)",
+      "Strings ($0D)",
+      "French Horn ($08)",
+      "Crash Cymbal ($12)",
+      "Timpani ($16)",
+      "Tuba ($1A)"
+    ],
+    "instrumentsLocation": "0540D5"
+  },
+  {
+    "name": "Coin Song",
+    "index": "$0B",
+    "trackLocation": "087CAF",
+    "trackLength": "$0377",
+    "instrumentSet": [
+      "Flute ($07)",
+      "Strings ($0D)",
+      "Oboe ($0A)",
+      "Digital Bass ($1C)"
+    ],
+    "instrumentsLocation": "0540F5"
+  },
+  {
+    "name": "Cyan",
+    "index": "$0C",
+    "trackLocation": "088028",
+    "trackLength": "$040E",
+    "instrumentSet": [
+      "French Horn ($08)",
+      "Shakuhachi ($34)",
+      "Strings ($0D)",
+      "Tambourine ($37)",
+      "Crash Cymbal ($12)",
+      "Timpani ($16)",
+      "Bass Section ($2C)"
+    ],
+    "instrumentsLocation": "054115"
+  },
+  {
+    "name": "Locke",
+    "index": "$0D",
+    "trackLocation": "088438",
+    "trackLength": "$0460",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "French Horn ($08)",
+      "Crash Cymbal ($12)",
+      "Snare ($14)",
+      "Timpani ($16)",
+      "Bass Section ($2C)"
+    ],
+    "instrumentsLocation": "054135"
+  },
+  {
+    "name": "Forever Rachel",
+    "index": "$0E",
+    "trackLocation": "08889A",
+    "trackLength": "$0351",
+    "instrumentSet": [
+      "Harp ($1B)",
+      "Digital Bass ($1C)",
+      "French Horn ($08)",
+      "Oboe ($0A)",
+      "Flute ($07)",
+      "Strings ($0D)"
+    ],
+    "instrumentsLocation": "054155"
+  },
+  {
+    "name": "Relm",
+    "index": "$0F",
+    "trackLocation": "088BED",
+    "trackLength": "$0367",
+    "instrumentSet": [
+      "Bagpipe ($33)",
+      "Flute ($07)",
+      "Oboe ($0A)",
+      "Harp ($1B)",
+      "Banjo ($1D)",
+      "Strings ($0D)",
+      "French Horn ($08)"
+    ],
+    "instrumentsLocation": "054175"
+  },
+  {
+    "name": "Setzer",
+    "index": "$10",
+    "trackLocation": "088F56",
+    "trackLength": "$0617",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "French Horn ($08)",
+      "Trumpet ($0E)",
+      "Crash Cymbal ($12)",
+      "Snare ($14)",
+      "Timpani ($16)",
+      "Bass Section ($2C)"
+    ],
+    "instrumentsLocation": "054195"
+  },
+  {
+    "name": "Epitaph",
+    "index": "$11",
+    "trackLocation": "08956F",
+    "trackLength": "$02B8",
+    "instrumentSet": [
+      "Mandolin ($31)",
+      "Spanish Guitar ($01)",
+      "Flute ($07)"
+    ],
+    "instrumentsLocation": "0541B5"
+  },
+  {
+    "name": "Celes",
+    "index": "$12",
+    "trackLocation": "089829",
+    "trackLength": "$0337",
+    "instrumentSet": [
+      "Flute ($07)",
+      "Strings ($0D)",
+      "Harp ($1B)",
+      "Glockenspiel ($20)"
+    ],
+    "instrumentsLocation": "0541D5"
+  },
+  {
+    "name": "Techno de Chocobo",
+    "index": "$13",
+    "trackLocation": "089B62",
+    "trackLength": "$0713",
+    "instrumentSet": [
+      "Electric Guitar ($1E)",
+      "Rock Organ ($0B)",
+      "Digital Bass ($1C)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Shaker ($2F)",
+      "Snare ($14)",
+      "Kick ($22)",
+      "Choco Synth 1 ($27)",
+      "Choco Synth 2 ($28)",
+      "Choco Synth 3 ($29)"
+    ],
+    "instrumentsLocation": "0541F5"
+  },
+  {
+    "name": "The Decisive Battle",
+    "index": "$14",
+    "trackLocation": "08A5D4",
+    "trackLength": "$0760",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Rock Organ ($0B)",
+      "Electric Guitar ($1E)",
+      "Digital Bass ($1C)",
+      "Crash Cymbal ($12)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Kick ($22)",
+      "Hard Snare ($21)"
+    ],
+    "instrumentsLocation": "054215"
+  },
+  {
+    "name": "Johnny C Bad",
+    "index": "$15",
+    "trackLocation": "04A4C0",
+    "trackLength": "$082E",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Trumpet ($0E)",
+      "French Horn ($08)",
+      "Digital Bass ($1C)",
+      "Snare ($14)",
+      "Rock Organ ($0B)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Kick ($22)",
+      "Timpani ($16)",
+      "Crash Cymbal ($12)"
+    ],
+    "instrumentsLocation": "054235"
+  },
+  {
+    "name": "Kefka",
+    "index": "$16",
+    "trackLocation": "08B7B8",
+    "trackLength": "$082E",
+    "instrumentSet": [
+      "Pizzicato ($19)",
+      "Strings ($0D)",
+      "Trumpet ($0E)",
+      "French Horn ($08)",
+      "Oboe ($0A)",
+      "Flute ($07)",
+      "Harp ($1B)",
+      "Timpani ($16)",
+      "Snare ($14)",
+      "Crash Cymbal ($12)",
+      "Bass Section ($2C)"
+    ],
+    "instrumentsLocation": "054255"
+  },
+  {
+    "name": "The Mines of Narshe",
+    "index": "$17",
+    "trackLocation": "08BFE8",
+    "trackLength": "$0262",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Acoustic Bass ($18)",
+      "Harp ($1B)",
+      "Snapping fingers ($15)",
+      "Piano ($0C)",
+      "Oboe ($0A)",
+      "Breath (like Narshe) ($13)"
+    ],
+    "instrumentsLocation": "054275"
+  },
+  {
+    "name": "The Phantom Forest",
+    "index": "$18",
+    "trackLocation": "08C24C",
+    "trackLength": "$0634",
+    "instrumentSet": [
+      "Flute ($07)",
+      "Strings ($0D)",
+      "Choir ($06)",
+      "Acoustic Guitar ($32)",
+      "Acoustic Bass ($18)",
+      "Oboe ($0A)",
+      "Breath (like Narshe) ($13)"
+    ],
+    "instrumentsLocation": "054295"
+  },
+  {
+    "name": "Wild West",
+    "index": "$19",
+    "trackLocation": "08CEC1",
+    "trackLength": "$046D",
+    "instrumentSet": [
+      "Toms ($17)",
+      "Kick ($22)",
+      "Shaker ($2F)",
+      "Oboe ($0A)",
+      "Conga Drum ($2E)",
+      "Strings ($0D)",
+      "Guiro ($2D)",
+      "Bass Section ($2C)",
+      "Cow Bell ($23)"
+    ],
+    "instrumentsLocation": "0542B5"
+  },
+  {
+    "name": "Save Them!",
+    "index": "$1A",
+    "trackLocation": "08D330",
+    "trackLength": "$0724",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Trumpet ($0E)",
+      "Bass Section ($2C)",
+      "Crash Cymbal ($12)",
+      "Snare ($14)",
+      "Timpani ($16)",
+      "Tuba ($1A)"
+    ],
+    "instrumentsLocation": "0542D5"
+  },
+  {
+    "name": "The Empire 'Gestahl'",
+    "index": "$1B",
+    "trackLocation": "08DA56",
+    "trackLength": "$0367",
+    "instrumentSet": [
+      "Trumpet ($0E)",
+      "French Horn ($08)",
+      "Strings ($0D)",
+      "Snare ($14)",
+      "Tubular Bell ($24)",
+      "Digital Bass ($1C)",
+      "Timpani ($16)"
+    ],
+    "instrumentsLocation": "0542F5"
+  },
+  {
+    "name": "Troops March On",
+    "index": "$1C",
+    "trackLocation": "08DDBF",
+    "trackLength": "$03AA",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Trumpet ($0E)",
+      "French Horn ($08)",
+      "Electric Bass ($02)",
+      "Snare ($14)",
+      "Timpani ($16)"
+    ],
+    "instrumentsLocation": "054315"
+  },
+  {
+    "name": "Under Martial Law",
+    "index": "$1D",
+    "trackLocation": "08E16B",
+    "trackLength": "$01EA",
+    "instrumentSet": [
+      "Harp ($1B)",
+      "Strings ($0D)",
+      "Oboe ($0A)",
+      "French Horn ($08)",
+      "Electric Bass ($02)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Kick ($22)"
+    ],
+    "instrumentsLocation": "054335"
+  },
+  {
+    "name": "(Water Flowing)",
+    "index": "$1E",
+    "trackLocation": "08E357",
+    "trackLength": "$89",
+    "instrumentSet": [],
+    "instrumentsLocation": "054355"
+  },
+  {
+    "name": "Metamorphosis",
+    "index": "$1F",
+    "trackLocation": "08E3E2",
+    "trackLength": "$0664",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Trumpet ($0E)",
+      "French Horn ($08)",
+      "Electric Bass ($02)",
+      "Crash Cymbal ($12)",
+      "Kick ($22)",
+      "Hard Snare ($21)",
+      "Toms ($17)"
+    ],
+    "instrumentsLocation": "054375"
+  },
+  {
+    "name": "Phantom Train",
+    "index": "$20",
+    "trackLocation": "08EA48",
+    "trackLength": "$055C",
+    "instrumentSet": [
+      "Acoustic Guitar ($32)",
+      "Trumpet ($0E)",
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Tuba ($1A)",
+      "Timpani ($16)",
+      "Flute ($07)",
+      "Snare ($14)",
+      "Closed Hi Hat ($0F)"
+    ],
+    "instrumentsLocation": "054395"
+  },
+  {
+    "name": "Another World of Beasts",
+    "index": "$21",
+    "trackLocation": "08EFA6",
+    "trackLength": "$04CA",
+    "instrumentSet": [
+      "Piano ($0C)",
+      "Harp ($1B)",
+      "Flute ($07)",
+      "Strings ($0D)",
+      "Digital Bass ($1C)"
+    ],
+    "instrumentsLocation": "0543B5"
+  },
+  {
+    "name": "Grand Finale #2",
+    "index": "$22",
+    "trackLocation": "08F472",
+    "trackLength": "$05A1",
+    "instrumentSet": [
+      "French Horn ($08)",
+      "Trumpet ($0E)",
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Crash Cymbal ($12)",
+      "Snare ($14)",
+      "Timpani ($16)"
+    ],
+    "instrumentsLocation": "0543D5"
+  },
+  {
+    "name": "Mt. Koltz",
+    "index": "$23",
+    "trackLocation": "08FA15",
+    "trackLength": "$042C",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "French Horn ($08)",
+      "Rock Organ ($0B)",
+      "Harp ($1B)",
+      "Electric Guitar ($1E)",
+      "Electric Bass ($02)",
+      "Toms ($17)"
+    ],
+    "instrumentsLocation": "0543F5"
+  },
+  {
+    "name": "Battle Theme",
+    "index": "$24",
+    "trackLocation": "08FE43",
+    "trackLength": "$0706",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Trumpet ($0E)",
+      "Electric Guitar ($1E)",
+      "Electric Bass ($02)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Crash Cymbal ($12)",
+      "Kick ($22)",
+      "Snare ($14)"
+    ],
+    "instrumentsLocation": "054415"
+  },
+  {
+    "name": "(Fanfare, slow)",
+    "index": "$25",
+    "trackLocation": "09054B",
+    "trackLength": "$9C",
+    "instrumentSet": [
+      "Trumpet ($0E)",
+      "Tuba ($1A)"
+    ],
+    "instrumentsLocation": "054435"
+  },
+  {
+    "name": "The Wedding #1",
+    "index": "$26",
+    "trackLocation": "0905E9",
+    "trackLength": "$047B",
+    "instrumentSet": [
+      "Flute ($07)",
+      "Harp ($1B)",
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Snare ($14)"
+    ],
+    "instrumentsLocation": "054455"
+  },
+  {
+    "name": "Aria de Mezzo Carattere",
+    "index": "$27",
+    "trackLocation": "090A66",
+    "trackLength": "$0A34",
+    "instrumentSet": [
+      "Female Voice ($3A)",
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Harp ($1B)",
+      "French Horn ($08)",
+      "Female Voice ($3A)"
+    ],
+    "instrumentsLocation": "054475"
+  },
+  {
+    "name": "The Serpent Trench",
+    "index": "$28",
+    "trackLocation": "0990B6",
+    "trackLength": "$02EA",
+    "instrumentSet": [
+      "French Horn ($08)",
+      "Strings ($0D)",
+      "Bass Section ($2C)"
+    ],
+    "instrumentsLocation": "054495"
+  },
+  {
+    "name": "Slam Shuffle",
+    "index": "$29",
+    "trackLocation": "0993A2",
+    "trackLength": "$03BB",
+    "instrumentSet": [],
+    "instrumentsLocation": "0544B5"
+  },
+  {
+    "name": "Kids Run Through the City Corner",
+    "index": "$2A",
+    "trackLocation": "09149C",
+    "trackLength": "$05AE",
+    "instrumentSet": [
+      "Kids Flute 1 ($35)",
+      "Acoustic Bass ($18)",
+      "Acoustic Guitar ($32)",
+      "Strings ($0D)",
+      "Kids Flute 2 ($36)"
+    ],
+    "instrumentsLocation": "0544D5"
+  },
+  {
+    "name": "Crazy Old Man",
+    "index": "$2B",
+    "trackLocation": "098E14",
+    "trackLength": "$02A0",
+    "instrumentSet": [
+      "Xylophone ($3E)",
+      "Guiro ($2D)",
+      "Wood Block ($30)",
+      "Woot ($26)",
+      "Tambourine ($37)",
+      "Shaker ($2F)",
+      "Open Hi Hat ($11)",
+      "Toms ($17)",
+      "Kick ($22)",
+      "Snare ($14)"
+    ],
+    "instrumentsLocation": "0544F5"
+  },
+  {
+    "name": "Grand Finale #1",
+    "index": "$2C",
+    "trackLocation": "09975F",
+    "trackLength": "$7E",
+    "instrumentSet": [
+      "Crowd Noise ($3F)"
+    ],
+    "instrumentsLocation": "054515"
+  },
+  {
+    "name": "Gogo",
+    "index": "$2D",
+    "trackLocation": "091A4C",
+    "trackLength": "$048F",
+    "instrumentSet": [
+      "Oboe ($0A)",
+      "Flute ($07)",
+      "French Horn ($08)",
+      "Trumpet ($0E)",
+      "Electric Bass ($02)",
+      "Timpani ($16)",
+      "Crash Cymbal ($12)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Kick ($22)",
+      "Snare ($14)"
+    ],
+    "instrumentsLocation": "054535"
+  },
+  {
+    "name": "Returners",
+    "index": "$2E",
+    "trackLocation": "091EDD",
+    "trackLength": "$07B0",
+    "instrumentSet": [
+      "French Horn ($08)",
+      "Trumpet ($0E)",
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Crash Cymbal ($12)",
+      "Digital Bass ($1C)",
+      "Snare ($14)"
+    ],
+    "instrumentsLocation": "054555"
+  },
+  {
+    "name": "Fanfare",
+    "index": "$2F",
+    "trackLocation": "09268F",
+    "trackLength": "$0306",
+    "instrumentSet": [
+      "Trumpet ($0E)",
+      "Electric Bass ($02)",
+      "Electric Guitar ($1E)",
+      "Snare ($14)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Kick ($22)"
+    ],
+    "instrumentsLocation": "054575"
+  },
+  {
+    "name": "Umaro",
+    "index": "$30",
+    "trackLocation": "092997",
+    "trackLength": "$0472",
+    "instrumentSet": [
+      "Wood Block ($30)",
+      "Oboe ($0A)",
+      "Trumpet ($0E)",
+      "Flute ($07)",
+      "Strings ($0D)",
+      "French Horn ($08)",
+      "Electric Bass ($02)",
+      "Timpani ($16)",
+      "Crash Cymbal ($12)"
+    ],
+    "instrumentsLocation": "054595"
+  },
+  {
+    "name": "Mog",
+    "index": "$31",
+    "trackLocation": "092E0B",
+    "trackLength": "$044B",
+    "instrumentSet": [
+      "French Horn ($08)",
+      "Trumpet ($0E)",
+      "Oboe ($0A)",
+      "Acoustic Guitar ($32)",
+      "Mog Banjo ($04)",
+      "Electric Bass ($02)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Kick ($22)",
+      "Hard Snare ($21)",
+      "Tuba ($1A)"
+    ],
+    "instrumentsLocation": "0545B5"
+  },
+  {
+    "name": "The Unforgiven",
+    "index": "$32",
+    "trackLocation": "093258",
+    "trackLength": "$05A5",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Trumpet ($0E)",
+      "Flute ($07)",
+      "French Horn ($08)",
+      "Crash Cymbal ($12)",
+      "Snare ($14)",
+      "Timpani ($16)",
+      "Bass Section ($2C)"
+    ],
+    "instrumentsLocation": "0545D5"
+  },
+  {
+    "name": "The Fierce Battle",
+    "index": "$33",
+    "trackLocation": "0937FF",
+    "trackLength": "$07AD",
+    "instrumentSet": [
+      "Flute ($07)",
+      "Trumpet ($0E)",
+      "French Horn ($08)",
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Snare ($14)",
+      "Crash Cymbal ($12)",
+      "Timpani ($16)",
+      "Atma Synth ($09)"
+    ],
+    "instrumentsLocation": "0545F5"
+  },
+  {
+    "name": "The Day After",
+    "index": "$34",
+    "trackLocation": "093FAE",
+    "trackLength": "$04B5",
+    "instrumentSet": [
+      "Oboe ($0A)",
+      "Flute ($07)",
+      "Harp ($1B)",
+      "Acoustic Guitar ($32)",
+      "Banjo ($1D)",
+      "Electric Bass ($02)",
+      "Shaker ($2F)",
+      "Kick ($22)"
+    ],
+    "instrumentsLocation": "054615"
+  },
+  {
+    "name": "Blackjack",
+    "index": "$35",
+    "trackLocation": "094465",
+    "trackLength": "$064C",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Trumpet ($0E)",
+      "French Horn ($08)",
+      "Electric Bass ($02)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Kick ($22)",
+      "Snare ($14)",
+      "Flute ($07)"
+    ],
+    "instrumentsLocation": "054635"
+  },
+  {
+    "name": "Catastrophe",
+    "index": "$36",
+    "trackLocation": "094AB3",
+    "trackLength": "$02BA",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Flute ($07)",
+      "French Horn ($08)",
+      "Bass Section ($2C)",
+      "Digital Bass ($1C)",
+      "Timpani ($16)",
+      "Crash Cymbal ($12)"
+    ],
+    "instrumentsLocation": "054655"
+  },
+  {
+    "name": "The Magic House",
+    "index": "$37",
+    "trackLocation": "094D6F",
+    "trackLength": "$05A5",
+    "instrumentSet": [
+      "Oboe ($0A)",
+      "Flute ($07)",
+      "Acoustic Guitar ($32)",
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Electric Bass ($02)"
+    ],
+    "instrumentsLocation": "054675"
+  },
+  {
+    "name": "(Nighty Night)",
+    "index": "$38",
+    "trackLocation": "095316",
+    "trackLength": "$C3",
+    "instrumentSet": [
+      "Piano ($0C)"
+    ],
+    "instrumentsLocation": "054695"
+  },
+  {
+    "name": "(Wind)",
+    "index": "$39",
+    "trackLocation": "0953DB",
+    "trackLength": "$E8",
+    "instrumentSet": [
+      "Hard Snare ($21)"
+    ],
+    "instrumentsLocation": "0546B5"
+  },
+  {
+    "name": "(Waves)",
+    "index": "$3A",
+    "trackLocation": "0954C5",
+    "trackLength": "$90",
+    "instrumentSet": [],
+    "instrumentsLocation": "0546D5"
+  },
+  {
+    "name": "Dancing Mad #1",
+    "index": "$3B",
+    "trackLocation": "095557",
+    "trackLength": "$0D70",
+    "instrumentSet": [
+      "Church Organ ($25)",
+      "Pipe Organ ($3B)",
+      "Female Voice ($3A)",
+      "Male Voice ($38)",
+      "Snare ($14)",
+      "Timpani ($16)",
+      "Crash Cymbal ($12)",
+      "Tubular Bell ($24)",
+      "Digital Bass ($1C)",
+      "Breath (like Narshe) ($13)"
+    ],
+    "instrumentsLocation": "0546F5"
+  },
+  {
+    "name": "(Phantom Train Stopping)",
+    "index": "$3C",
+    "trackLocation": "0962C9",
+    "trackLength": "$0102",
+    "instrumentSet": [],
+    "instrumentsLocation": "054715"
+  },
+  {
+    "name": "Spinach Rag",
+    "index": "$3D",
+    "trackLocation": "0963CD",
+    "trackLength": "$0534",
+    "instrumentSet": [
+      "Piano ($0C)"
+    ],
+    "instrumentsLocation": "054735"
+  },
+  {
+    "name": "Rest in Peace",
+    "index": "$3E",
+    "trackLocation": "096903",
+    "trackLength": "$0169",
+    "instrumentSet": [
+      "Flute ($07)",
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Harp ($1B)"
+    ],
+    "instrumentsLocation": "054755"
+  },
+  {
+    "name": "(Chocobos Running)",
+    "index": "$3F",
+    "trackLocation": "096A6E",
+    "trackLength": "$A9",
+    "instrumentSet": [],
+    "instrumentsLocation": "054775"
+  },
+  {
+    "name": "(Walking out of Zozo)",
+    "index": "$40",
+    "trackLocation": "096B19",
+    "trackLength": "$A7",
+    "instrumentSet": [],
+    "instrumentsLocation": "054795"
+  },
+  {
+    "name": "Overture #1",
+    "index": "$41",
+    "trackLocation": "096BC2",
+    "trackLength": "$0516",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Harp ($1B)",
+      "Bass Section ($2C)",
+      "Snare ($14)",
+      "Crash Cymbal ($12)",
+      "Timpani ($16)"
+    ],
+    "instrumentsLocation": "0547B5"
+  },
+  {
+    "name": "Overture #2",
+    "index": "$42",
+    "trackLocation": "0970DA",
+    "trackLength": "$ED",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Low Male Voice ($39)"
+    ],
+    "instrumentsLocation": "0547D5"
+  },
+  {
+    "name": "Overture #3",
+    "index": "$43",
+    "trackLocation": "0971C9",
+    "trackLength": "$083B",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Trumpet ($0E)",
+      "Bass Section ($2C)",
+      "French Horn ($08)",
+      "Snare ($14)",
+      "Crash Cymbal ($12)",
+      "Timpani ($16)",
+      "Flute ($07)",
+      "Acoustic Guitar ($32)"
+    ],
+    "instrumentsLocation": "0547F5"
+  },
+  {
+    "name": "The Wedding #2",
+    "index": "$44",
+    "trackLocation": "097A06",
+    "trackLength": "$02E3",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Crash Cymbal ($12)",
+      "Snare ($14)",
+      "Timpani ($16)"
+    ],
+    "instrumentsLocation": "054815"
+  },
+  {
+    "name": "The Wedding #3",
+    "index": "$45",
+    "trackLocation": "097CEB",
+    "trackLength": "$028F",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Low Male Voice ($39)",
+      "Female Voice ($3A)",
+      "Male Voice ($38)",
+      "Trumpet ($0E)"
+    ],
+    "instrumentsLocation": "054835"
+  },
+  {
+    "name": "The Wedding #4",
+    "index": "$46",
+    "trackLocation": "097F7C",
+    "trackLength": "$045D",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Crash Cymbal ($12)",
+      "Snare ($14)",
+      "Timpani ($16)"
+    ],
+    "instrumentsLocation": "054855"
+  },
+  {
+    "name": "Devil's Lab",
+    "index": "$47",
+    "trackLocation": "098842",
+    "trackLength": "$0455",
+    "instrumentSet": [
+      "Trumpet ($0E)",
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Digital Bass ($1C)",
+      "Metal Clank ($3D)",
+      "Metal Bang ($3C)",
+      "Kick ($22)",
+      "Hard Snare ($21)"
+    ],
+    "instrumentsLocation": "054875"
+  },
+  {
+    "name": "(Esper Attack)",
+    "index": "$48",
+    "trackLocation": "098C99",
+    "trackLength": "$4D",
+    "instrumentSet": [],
+    "instrumentsLocation": "054895"
+  },
+  {
+    "name": "(Cranes)",
+    "index": "$49",
+    "trackLocation": "098CE8",
+    "trackLength": "$9B",
+    "instrumentSet": [
+      "Metal Clank ($3D)"
+    ],
+    "instrumentsLocation": "0548B5"
+  },
+  {
+    "name": "(Burning House)",
+    "index": "$4A",
+    "trackLocation": "098D85",
+    "trackLength": "$8D",
+    "instrumentSet": [],
+    "instrumentsLocation": "0548D5"
+  },
+  {
+    "name": "New Continent",
+    "index": "$4B",
+    "trackLocation": "0997DF",
+    "trackLength": "$05DE",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Harp ($1B)",
+      "Snare ($14)",
+      "Tuba ($1A)",
+      "Crash Cymbal ($12)",
+      "Timpani ($16)",
+      "Digital Bass ($1C)"
+    ],
+    "instrumentsLocation": "0548F5"
+  },
+  {
+    "name": "Searching for Friends",
+    "index": "$4C",
+    "trackLocation": "099DBF",
+    "trackLength": "$048E",
+    "instrumentSet": [
+      "Pan Flute ($03)",
+      "Strings ($0D)",
+      "Digital Bass ($1C)",
+      "Open Hi Hat ($11)",
+      "Closed Hi Hat ($0F)",
+      "Choir ($06)"
+    ],
+    "instrumentsLocation": "054915"
+  },
+  {
+    "name": "Fanatics",
+    "index": "$4D",
+    "trackLocation": "09A24F",
+    "trackLength": "$0187",
+    "instrumentSet": [
+      "Male Voice ($38)",
+      "Female Voice ($3A)",
+      "Low Male Voice ($39)",
+      "Tambourine ($37)",
+      "Timpani ($16)",
+      "Crash Cymbal ($12)",
+      "Church Organ ($25)"
+    ],
+    "instrumentsLocation": "054935"
+  },
+  {
+    "name": "Last Dungeon",
+    "index": "$4E",
+    "trackLocation": "09A3D8",
+    "trackLength": "$0877",
+    "instrumentSet": [
+      "Trumpet ($0E)",
+      "Timpani ($16)",
+      "Strings ($0D)",
+      "Digital Bass ($1C)",
+      "Snare ($14)",
+      "Crash Cymbal ($12)"
+    ],
+    "instrumentsLocation": "054955"
+  },
+  {
+    "name": "Dark World",
+    "index": "$4F",
+    "trackLocation": "09AC51",
+    "trackLength": "$024C",
+    "instrumentSet": [
+      "Church Organ ($25)",
+      "Mandolin ($31)",
+      "Tubular Bell ($24)",
+      "Flute ($07)",
+      "Piano ($0C)"
+    ],
+    "instrumentsLocation": "054975"
+  },
+  {
+    "name": "Dancing Mad #3",
+    "index": "$50",
+    "trackLocation": "09AE9F",
+    "trackLength": "$0B18",
+    "instrumentSet": [
+      "Rock Organ ($0B)",
+      "Electric Guitar ($1E)",
+      "Digital Bass ($1C)",
+      "Crash Cymbal ($12)",
+      "Closed Hi Hat ($0F)",
+      "Open Hi Hat ($11)",
+      "Toms ($17)",
+      "Hard Snare ($21)",
+      "Kick ($22)",
+      "Church Organ ($25)"
+    ],
+    "instrumentsLocation": "054995"
+  },
+  {
+    "name": "Dancing Mad #2",
+    "index": "$51",
+    "trackLocation": "085C7A",
+    "trackLength": "$24",
+    "instrumentSet": [],
+    "instrumentsLocation": "0549B5"
+  },
+  {
+    "name": "Ending Theme #1",
+    "index": "$52",
+    "trackLocation": "09B9B9",
+    "trackLength": "$013E",
+    "instrumentSet": [
+      "Church Organ ($25)",
+      "Female Voice ($3A)",
+      "Male Voice ($38)"
+    ],
+    "instrumentsLocation": "0549D5"
+  },
+  {
+    "name": "Ending Theme #2",
+    "index": "$53",
+    "trackLocation": "09BAF9",
+    "trackLength": "$2444",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Flute ($07)",
+      "Oboe ($0A)",
+      "Trumpet ($0E)",
+      "French Horn ($08)",
+      "Tuba ($1A)",
+      "Crash Cymbal ($12)",
+      "Snare ($14)",
+      "Timpani ($16)",
+      "Harp ($1B)"
+    ],
+    "instrumentsLocation": "0549F5"
+  },
+  {
+    "index": "$54",
+    "trackLocation": "09DF3F",
+    "trackLength": "$1DAB",
+    "instrumentSet": [
+      "Strings ($0D)",
+      "Bass Section ($2C)",
+      "Flute ($07)",
+      "Oboe ($0A)",
+      "Trumpet ($0E)",
+      "French Horn ($08)",
+      "Tuba ($1A)",
+      "Crash Cymbal ($12)",
+      "Snare ($14)",
+      "Timpani ($16)",
+      "Harp ($1B)"
+    ],
+    "instrumentsLocation": "054A15"
   }
 ]
